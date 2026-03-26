@@ -66,29 +66,6 @@
             <circle cx="12" cy="12" r="10" fill="currentColor" />
         </svg>
     </div>
-    <!-- Decorative Background Shapes -->
-    <div class="decorative-bg">
-        <svg class="deco-shape float-slow" width="120" height="120" viewBox="0 0 24 24"
-            style="top: 10%; left: -2%; color: var(--primary-color);">
-            <path fill="currentColor"
-                d="M12 1L14.39 8.26H22L15.81 12.75L18.19 20L12 15.5L5.81 20L8.19 12.75L2 8.26H9.61L12 1Z" />
-        </svg>
-        <svg class="deco-shape float-slow-reverse" width="80" height="80" viewBox="0 0 24 24"
-            style="top: 40%; right: -1%; color: var(--secondary-color);">
-            <path fill="currentColor"
-                d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.41 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.59 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z" />
-        </svg>
-        <svg class="deco-shape float-slow" width="150" height="150" viewBox="0 0 24 24"
-            style="bottom: 5%; left: 5%; color: var(--accent-color);">
-            <path fill="currentColor"
-                d="M17.5 19C15.01 19 13 16.99 13 14.5C13 14.36 13.01 14.23 13.03 14.1C12.7 14.04 12.35 14 12 14C9.24 14 7 11.76 7 9C7 6.24 9.24 4 12 4C14.31 4 16.25 5.56 16.8 7.69C17.03 7.62 17.26 7.59 17.5 7.59C19.43 7.59 21 9.16 21 11.09C21 11.85 20.76 12.55 20.35 13.13C20.75 13.75 21 14.47 21 15.25C21 17.32 19.43 19 17.5 19Z" />
-        </svg>
-        <svg class="deco-shape float-slow-reverse" width="60" height="60" viewBox="0 0 24 24"
-            style="top: 20%; right: 15%; color: var(--primary-color);">
-            <circle cx="12" cy="12" r="10" fill="currentColor" />
-        </svg>
-    </div>
-
     <nav class="navbar navbar-expand-lg fixed-top border-bottom">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -242,7 +219,8 @@
                         <div class="position-absolute bottom-0 start-0 translate-middle-x mb-5 ms-5 bg-white p-4 rounded-4 shadow-2xl rotate-3 scale-105 consultation-card"
                             style="width: 260px; z-index: 10;">
                             <div class="d-flex align-items-center gap-3 mb-3">
-                                <span class="badge bg-success-soft text-success p-2 rounded-circle"><i
+                                <span class="badge  text-success p-2 rounded-circle"
+                                    style="color: var(--secondary-color) !important;"><i
                                         class="bi bi-calendar-check"></i></span>
                                 <span class="small fw-bold text-dark">Book an Intake</span>
                             </div>
@@ -267,7 +245,7 @@
     <section id="impact" class="py-6 position-relative overflow-hidden">
         <div class="container position-relative z-index-1">
             <div class="text-center mb-5 reveal">
-                <h2 class="display-5 fw-bold mb-3">Our Impact in Numbers</h2>
+                <h2 class="display-5 fw-bold mb-3">Our Impact in <span class="text-gradient">Numbers</span></h2>
                 <p class="text-secondary lead">Measuring success through milestones and smiles.</p>
             </div>
 
@@ -292,18 +270,18 @@
 
                 <!-- Small Stat Cards -->
                 <div class="mosaic-card text-center" style="grid-column: span 4; grid-row: span 1;">
-                    <div class="text-primary h1 mb-3"><i class="bi bi-patch-check-fill"></i></div>
-                    <h3 class="fw-bold text-dark mb-1 counter" data-target="15">0</h3>
+                    <div class=" h1 mb-3"><i class="bi bi-patch-check-fill"></i></div>
+                    <h3 class="fw-bold mb-1 counter" data-target="15">0</h3>
                     <p class="text-secondary mb-0 fw-medium">Years of Experience</p>
                 </div>
                 <div class="mosaic-card text-center" style="grid-column: span 4; grid-row: span 1;">
-                    <div class="text-success h1 mb-3"><i class="bi bi-person-heart"></i></div>
-                    <h3 class="fw-bold text-dark mb-1 counter" data-target="24">0</h3>
+                    <div class=" h1 mb-3"><i class="bi bi-person-heart"></i></div>
+                    <h3 class="fw-bold mb-1 counter" data-target="24">0</h3>
                     <p class="text-secondary mb-0 fw-medium">Expert Clinicians</p>
                 </div>
                 <div class="mosaic-card text-center" style="grid-column: span 4; grid-row: span 1;">
-                    <div class="text-warning h1 mb-3"><i class="bi bi-calendar2-event-fill"></i></div>
-                    <h3 class="fw-bold text-dark mb-1 counter" data-target="1200">0+</h3>
+                    <div class=" h1 mb-3"><i class="bi bi-calendar2-event-fill"></i></div>
+                    <h3 class="fw-bold mb-1 counter" data-target="1200">0+</h3>
                     <p class="text-secondary mb-0 fw-medium">Monthly Sessions</p>
                 </div>
             </div>
@@ -313,17 +291,17 @@
     <!-- Section 3: The Path to Confidence (Iconic Journey) -->
     <section class="py-6 overflow-hidden">
         <div class="container py-5">
-            <div class="row align-items-end mb-5 reveal">
-                <div class="col-lg-8 text-start">
-                    <span class="badge bg-accent-soft text-accent mb-2 px-3 py-2">Our Process</span>
-                    <h2 class="display-5 fw-bold mb-3">The Path to Confidence</h2>
-                    <p class="text-secondary lead">A structured, play-based approach to measurable communication
-                        success.</p>
+            <div class="row justify-content-center text-center mb-5 reveal">
+                <div class="col-lg-8">
+                    <span class="badge bg-accent-soft text-accent mb-2 px-3 py-2"
+                        style="color: var(--primary-color) !important;">Our Process</span>
+                    <h2 class="display-5 fw-bold mb-3">The Path to <span class="text-gradient">Confidence</span></h2>
+                    <p class="text-secondary lead">A structured, play-based approach to measurable communication success.</p>
                 </div>
             </div>
 
             <div class="row row-cols-1 row-cols-md-4 g-4 text-center reveal">
-                <div class="col">
+                <div class="col mt-md-5">
                     <div class="wave-step mb-4">
                         <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=300"
                             alt="Assessment">
@@ -340,7 +318,7 @@
                     <p class="small text-secondary px-3">Pairing your child with the specialist that fits their
                         personality.</p>
                 </div>
-                <div class="col">
+                <div class="col mt-md-5">
                     <div class="wave-step mb-4" style="border-color: var(--warning-color);">
                         <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=300"
                             alt="Therapy">
@@ -363,14 +341,10 @@
     <!-- Section 4: Specialized Therapy Areas (Photography) -->
     <section class="py-6">
         <div class="container py-5">
-            <div class="row align-items-end mb-5 reveal">
-                <div class="col-lg-6 text-start">
-                    <h2 class="display-5 fw-bold">Specialized <br>Therapy Areas</h2>
+            <div class="row justify-content-center text-center mb-5 reveal">
+                <div class="col-lg-8">
+                    <h2 class="display-5 fw-bold">Specialized <span class="text-gradient">Therapy Areas</span></h2>
                     <p class="text-secondary lead mt-3">Combining clinical science and creative play.</p>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a href="services.html" class="btn btn-outline-primary rounded-pill px-4">See All
-                        Specializations</a>
                 </div>
             </div>
 
@@ -386,7 +360,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mt-md-5">
+                <div class="col-md-4">
                     <div class="service-img-card shadow-sm border-0">
                         <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=600"
                             class="card-img-top" alt="Language Delay Therapy">
@@ -409,15 +383,18 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center mt-5 reveal">
+                <a href="services.html" class="btn btn-outline-primary rounded-pill px-5 py-2">See All Specializations</a>
+            </div>
         </div>
     </section>
 
     <!-- Section 5: Parent Experiences -->
-    <section class="py-6 bg-light-soft">
+    <section class="py-6" style="background: linear-gradient(135deg, rgba(255, 87, 123, 0.05) 0%, rgba(255, 184, 0, 0.05) 100%);">
         <div class="container">
             <div class="row justify-content-center text-center mb-5 reveal">
                 <div class="col-lg-8">
-                    <h2 class="display-6 fw-bold">Parent Experiences</h2>
+                    <h2 class="display-6 fw-bold">Parent <span class="text-gradient">Experiences</span></h2>
                     <p class="text-secondary">Real stories from families on the path to communication.</p>
                 </div>
             </div>
@@ -428,7 +405,6 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="mosaic-card text-center p-5 border-0 shadow-lg">
-                                    <i class="bi bi-quote display-1 text-primary opacity-25 mb-4"></i>
                                     <h4 class="lh-base mb-4 fw-light">"Our specialist didn't just treat my son; she
                                         became part of our family team. The progress we've seen in his articulation is
                                         beyond what we hoped for."</h4>
@@ -442,7 +418,6 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="mosaic-card text-center p-5 border-0 shadow-lg">
-                                    <i class="bi bi-quote display-1 text-secondary opacity-25 mb-4"></i>
                                     <h4 class="lh-base mb-4 fw-light">"The focus on play-based therapy changed
                                         everything. My daughter actually looks forward to her sessions. She's finally
                                         finding her voice and her confidence."</h4>
@@ -466,7 +441,8 @@
     <section class="adventure-cta text-center reveal">
         <div class="adventure-overlay"></div>
         <div class="container position-relative z-index-1 py-5">
-            <h2 class="display-3 fw-black mb-4">Every Child has a Voice. <br>Let's Help it Flourish.</h2>
+            <h2 class="display-3 fw-black mb-4">Every Child has a <span class="text-gradient">Voice</span>. <br>Let's
+                Help it <span class="text-gradient">Flourish</span>.</h2>
             <p class="lead text-white opacity-75 mb-5 mx-auto" style="max-width: 600px;">
                 Join the Kinderly community today and take the first step toward a clearer, more confident tomorrow for
                 your child.
