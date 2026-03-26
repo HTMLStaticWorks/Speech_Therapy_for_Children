@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Kinder Speech Therapy Management</title>
-    <meta name="description" content="Secure client dashboard for Kinderly Speech Therapy. Track your child's progress, schedule sessions, and access therapy resources in one place.">
-    <meta name="keywords" content="therapy dashboard, progress tracking, session management, speech therapy portal, patient portal">
+    <meta name="description"
+        content="Secure client dashboard for Kinderly Speech Therapy. Track your child's progress, schedule sessions, and access therapy resources in one place.">
+    <meta name="keywords"
+        content="therapy dashboard, progress tracking, session management, speech therapy portal, patient portal">
     <meta name="author" content="Kinder Speech Therapy">
     <meta property="og:title" content="Kinder Therapy Dashboard">
     <meta property="og:description" content="Track progress and manage therapy sessions conveniently.">
@@ -22,7 +25,11 @@
         :root {
             --sidebar-width: 280px;
         }
-        body { padding-top: 72px; }
+
+        body {
+            padding-top: 0;
+        }
+
         .dashboard-topbar {
             display: none;
             position: fixed;
@@ -34,38 +41,142 @@
             background: var(--card-bg);
             border-bottom: 1px solid var(--border-color);
         }
+
         .dashboard-wrapper {
             display: flex;
-            min-height: calc(100vh - 72px);
+            min-height: 100vh;
         }
+
+        .dashboard-content-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem 1.25rem;
+            border-radius: 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .dashboard-content-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .sidebar {
             width: var(--sidebar-width);
             background: var(--card-bg);
             border-right: 1px solid var(--border-color);
             padding: 32px 24px;
             position: fixed;
-            top: 72px;
+            top: 0;
             left: 0;
-            height: calc(100vh - 72px);
+            height: 100vh;
             z-index: 1000;
             overflow-y: auto;
             transition: transform 0.3s ease;
         }
+
         .sidebar-header-mobile {
             display: none;
         }
+
+        .dashboard-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            padding: 1rem;
+            border-radius: 22px;
+            background: rgba(255, 87, 123, 0.08);
+            border: 1px solid rgba(255, 87, 123, 0.12);
+            margin-bottom: 1.5rem;
+        }
+
+        .dashboard-profile-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+        }
+
+        .dashboard-profile small {
+            display: block;
+            color: var(--text-secondary);
+        }
+
+        .dashboard-mobile-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dashboard-mobile-tools {
+            display: none;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .dashboard-icon-btn {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            padding: 0;
+            min-width: 42px;
+            min-height: 42px;
+            flex-shrink: 0;
+        }
+
+        .dashboard-mobile-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 87, 123, 0.2);
+        }
+
         .main-content {
             flex: 1;
             margin-left: var(--sidebar-width);
             padding: 40px;
             background: var(--bg-color);
         }
+
+        .dashboard-panel>header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .dashboard-stack-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .dashboard-table th:last-child,
+        .dashboard-table td:last-child {
+            width: 56px;
+            text-align: end;
+        }
+
         .dashboard-panel {
             display: none;
         }
+
         .dashboard-panel.active {
             display: block;
         }
+
         .dashboard-section-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -74,23 +185,27 @@
             box-shadow: var(--shadow-sm);
             height: 100%;
         }
+
         .dashboard-summary-card {
-            background: linear-gradient(135deg, rgba(255, 87, 123, 0.12), rgba(255, 184, 0, 0.14));
-            border: 1px solid rgba(255, 87, 123, 0.15);
+            background: linear-gradient(135deg, rgba(255, 87, 123, 0.08), rgba(255, 184, 0, 0.1));
+            border: 1px solid rgba(255, 87, 123, 0.1);
             border-radius: 24px;
             padding: 24px;
             height: 100%;
         }
+
         .dashboard-sidebar-backdrop {
             display: none;
             position: fixed;
-            inset: 72px 0 0 0;
-            background: rgba(15, 23, 42, 0.45);
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
             z-index: 999;
         }
+
         .dashboard-sidebar-backdrop.show {
             display: block;
         }
+
         .sidebar-link {
             display: flex;
             align-items: center;
@@ -103,140 +218,254 @@
             transition: all 0.2s ease;
             margin-bottom: 8px;
         }
-        .sidebar-link:hover, .sidebar-link.active {
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
             background: var(--primary-color);
             color: white;
         }
-        .sidebar-link.text-danger:hover, .sidebar-link.text-danger.active {
+
+        .sidebar-link.text-danger:hover,
+        .sidebar-link.text-danger.active {
             background: rgba(220, 53, 69, 0.12);
             color: #dc3545;
         }
+
+        [data-bs-theme="dark"] .dashboard-profile {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(148, 163, 184, 0.2);
+        }
+
+        [data-bs-theme="dark"] .dashboard-profile-avatar {
+            border-color: #1e293b;
+            box-shadow: 0 10px 20px rgba(2, 6, 23, 0.35);
+        }
+
+        @media (max-width: 1199px) {
+            .main-content {
+                padding: 32px 24px;
+            }
+
+            .dashboard-content-bar {
+                padding: 0.9rem 1.25rem;
+                border-radius: 20px;
+            }
+
+            .dashboard-section-card,
+            .dashboard-summary-card,
+            .premium-card {
+                padding: 24px;
+                border-radius: 20px;
+            }
+        }
+
         @media (max-width: 1024px) {
-            .navbar { display: none; }
+            body {
+                padding-top: 72px;
+            }
+
             .dashboard-topbar {
                 display: flex;
                 align-items: center;
+                box-shadow: var(--shadow-sm);
             }
-            .sidebar { transform: translateX(-100%); }
-            .sidebar.show { transform: translateX(0); }
+
+            .sidebar {
+                width: min(320px, 86vw);
+                transform: translateX(100%);
+                top: 0;
+                left: auto;
+                right: 0;
+                height: 100vh;
+                z-index: 1200;
+                border: none;
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .dashboard-sidebar-backdrop {
+                inset: 0;
+                z-index: 1150;
+                backdrop-filter: blur(4px);
+            }
+
             .sidebar-header-mobile {
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-end;
                 align-items: center;
-                margin-bottom: 1.25rem;
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid var(--border-color);
             }
+
+            .dashboard-mobile-tools {
+                display: flex;
+                margin-bottom: 1.5rem;
+                padding: 1rem;
+                background: rgba(var(--primary-color-rgb, 255, 87, 123), 0.05);
+                border-radius: 16px;
+                justify-content: space-around;
+            }
+
+            .dashboard-content-bar {
+                display: none;
+            }
+
             .main-content {
                 margin-left: 0;
-                padding: 24px 18px 32px;
+                padding: 24px 20px 40px;
+            }
+
+            .dashboard-panel>header {
+                margin-bottom: 1.5rem !important;
+            }
+
+            .dashboard-panel>header h2 {
+                font-size: 1.75rem;
+            }
+
+            .dashboard-table {
+                min-width: 600px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .dashboard-topbar {
+                height: 64px;
+            }
+
+            body {
+                padding-top: 64px;
+            }
+
+            .sidebar {
+                width: 100%;
+                max-width: 320px;
+                padding: 24px 20px;
+                left: auto;
+                right: 0;
+            }
+
+            .main-content {
+                padding: 20px 16px 32px;
+            }
+
+            .dashboard-section-card,
+            .dashboard-summary-card,
+            .premium-card,
+            .dashboard-profile {
+                padding: 20px;
+                border-radius: 18px;
+            }
+
+            .dashboard-profile {
+                gap: 0.75rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .dashboard-profile-avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 14px;
+            }
+
+            .dashboard-mobile-tools {
+                gap: 0.5rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .dashboard-icon-btn,
+            #dashboardTopbarToggle,
+            #dashboardSidebarClose {
+                width: 40px !important;
+                height: 40px !important;
+                min-width: 40px;
+                min-height: 40px;
+            }
+
+            .dashboard-stack-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .dashboard-stack-item .btn,
+            .dashboard-section-card .d-grid .btn,
+            .dashboard-summary-card .btn,
+            .premium-card .d-flex.flex-wrap .btn {
+                width: 100%;
+            }
+
+            .premium-card .d-flex.flex-wrap {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+
+            .dashboard-table {
+                min-width: 100%;
+                margin-bottom: 0;
+            }
+
+            .table.align-middle td,
+            .table.align-middle th {
+                padding: 1rem 0.75rem;
+                white-space: nowrap;
+            }
+
+            .card-title,
+            h5 {
+                font-size: 1.1rem;
+                letter-spacing: -0.01em;
+            }
+
+            .fs-2 {
+                font-size: 1.75rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dashboard-panel>header h2 {
+                font-size: 1.4rem;
+                line-height: 1.3;
+            }
+
+            .main-content {
+                padding: 16px 12px 24px;
+                overflow-x: hidden;
+            }
+
+            .dashboard-section-card,
+            .dashboard-summary-card,
+            .premium-card {
+                padding: 16px;
+                border-radius: 16px;
+            }
+
+            .container-fluid {
+                padding-left: 12px;
+                padding-right: 12px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="dashboard-topbar px-3">
-        <div class="container-fluid d-flex align-items-center justify-content-between">
+        <div class="container-fluid d-flex align-items-center justify-content-between h-100">
             <a class="navbar-brand m-0" href="index.html">
-                <img src="assets/images/logo.svg" alt="Kinderly Logo" height="40">
+                <img src="assets/images/logo.svg" alt="Kinderly Logo" class="dashboard-logo" height="36">
             </a>
-            <button class="btn btn-outline-primary rounded-circle d-inline-flex align-items-center justify-content-center" id="dashboardTopbarToggle" style="width: 46px; height: 46px;">
-                <i class="bi bi-list fs-4"></i>
-            </button>
-        </div>
-    </div>
-
-    <nav class="navbar navbar-expand-lg fixed-top border-bottom">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/logo.svg" alt="Kinderly Logo" height="40">
-            </a>
-
-            <div class="d-flex align-items-center gap-3 d-lg-none">
-                <button class="theme-toggle" id="themeToggleMobile">
-                    <i class="bi bi-moon-stars"></i>
-                </button>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileMenu">
-                    <span class="navbar-toggler-icon"></span>
+            <div class="dashboard-mobile-actions">
+                <button
+                    class="btn btn-outline-primary rounded-circle d-inline-flex align-items-center justify-content-center"
+                    id="dashboardTopbarToggle" style="width: 46px; height: 46px;">
+                    <i class="bi bi-list fs-4"></i>
                 </button>
             </div>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.html">Home 1 (Classic)</a></li>
-                            <li><a class="dropdown-item" href="home-2.html">Home 2 (Modern)</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
-                    <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-                <div class="d-flex align-items-center gap-3">
-                    <button class="theme-toggle d-none d-lg-block" id="themeToggle" title="Toggle Theme">
-                        <i class="bi bi-moon-stars"></i>
-                    </button>
-                    <button class="btn btn-outline-primary btn-sm rounded-circle d-none d-lg-flex align-items-center justify-content-center" id="rtlToggle" style="width: 35px; height: 35px;" title="Toggle RTL">
-                        <i class="bi bi-translate"></i>
-                    </button>
-                    <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
-                            <i class="bi bi-person-circle fs-5"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="dashboard.html?role=admin">Admin View</a></li>
-                            <li><a class="dropdown-item" href="dashboard.html?role=parent">Parents View</a></li>
-                        </ul>
-                    </div>
-                    <a href="contact.html" class="btn btn-primary px-4 d-none d-lg-block">Book Now</a>
-                    <a href="register.html" class="btn btn-outline-primary px-4 d-none d-lg-block">Sign Up</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu (Offcanvas) -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
-        <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title fw-bold color-primary">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="navbar-nav gap-3">
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.html">Home 1</a></li>
-                            <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
-                <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <hr>
-                <li class="nav-item">
-                    <button class="btn btn-outline-primary w-100 mb-3" id="rtlToggleMobile">
-                        <i class="bi bi-translate me-2"></i> RTL Mode
-                    </button>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active fw-bold" href="dashboard.html?role=admin">Admin Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-bold" href="dashboard.html?role=parent">Parents Dashboard</a>
-                </li>
-                <li class="nav-item d-grid gap-2">
-                    <a class="btn btn-primary" href="contact.html">Book Now</a>
-                    <a class="btn btn-outline-primary" href="register.html">Sign Up</a>
-                </li>
-            </ul>
         </div>
     </div>
 
@@ -246,32 +475,69 @@
         <!-- Sidebar -->
         <aside class="sidebar" id="dashboardSidebar">
             <div class="sidebar-header-mobile">
-                <a class="navbar-brand m-0" href="index.html">
-                    <img src="assets/images/logo.svg" alt="Kinderly Logo" height="36">
-                </a>
-                <button class="btn btn-outline-primary rounded-circle d-inline-flex align-items-center justify-content-center" id="dashboardSidebarClose" style="width: 42px; height: 42px;">
+                <button class="btn btn-light rounded-circle d-inline-flex align-items-center justify-content-center"
+                    id="dashboardSidebarClose" style="width: 38px; height: 38px;">
                     <i class="bi bi-x-lg"></i>
                 </button>
             </div>
+            <div class="dashboard-mobile-tools">
+                <button class="theme-toggle" id="themeToggleMobile" title="Toggle Theme">
+                    <i class="bi bi-moon-stars"></i>
+                </button>
+                <button class="btn btn-outline-primary dashboard-icon-btn" id="rtlToggleMobile" title="Toggle RTL">
+                    <i class="bi bi-translate"></i>
+                </button>
+            </div>
+            <div class="dashboard-profile">
+                <img src="assets/images/team_1.png" alt="Sarah Collins profile" class="dashboard-profile-avatar"
+                    id="dashboardProfileImage">
+                <div>
+                    <small>Signed in as</small>
+                    <div class="fw-bold" id="dashboardProfileName">Sarah Collins</div>
+                    <div class="small text-secondary" id="dashboardProfileRole">Speech Therapist</div>
+                </div>
+            </div>
             <div class="mb-4 px-3">
                 <label class="small text-secondary fw-bold mb-2 d-block">SWITCH ROLE</label>
-                <select class="form-select" id="roleSwitcher">
-                    <option value="parent">Parent View</option>
-                    <option value="admin">Admin View</option>
-                </select>
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-between dropdown-toggle" type="button" data-bs-toggle="dropdown" id="roleSwitcherBtn">
+                        <span id="activeRoleText">Parent View</span>
+                    </button>
+                    <ul class="dropdown-menu w-100 shadow-lg border-0 mt-2" id="roleSwitcherMenu">
+                        <li><a class="dropdown-item py-2" href="#" data-value="parent">Parent View</a></li>
+                        <li><a class="dropdown-item py-2" href="#" data-value="admin">Admin View</a></li>
+                    </ul>
+                </div>
             </div>
-            
+
             <nav>
-                <a href="#" class="sidebar-link active" data-parent-target="parent-overview" data-admin-target="admin-overview"><i class="bi bi-grid-1x2-fill"></i> Overview</a>
-                <a href="#" class="sidebar-link" data-parent-target="parent-appointments" data-admin-target="admin-schedule"><i class="bi bi-calendar-event"></i> Appointments</a>
-                <a href="#" class="sidebar-link" data-parent-target="parent-progress" data-admin-target="admin-progress"><i class="bi bi-activity"></i> Progress Tracker</a>
-                <a href="#" class="sidebar-link" data-parent-target="parent-resources" data-admin-target="admin-resources"><i class="bi bi-book"></i> Resources</a>
+                <a href="#" class="sidebar-link active" data-parent-target="parent-overview"
+                    data-admin-target="admin-overview"><i class="bi bi-grid-1x2-fill"></i> Overview</a>
+                <a href="#" class="sidebar-link" data-parent-target="parent-appointments"
+                    data-admin-target="admin-schedule"><i class="bi bi-calendar-event"></i> Appointments</a>
+                <a href="#" class="sidebar-link" data-parent-target="parent-progress"
+                    data-admin-target="admin-progress"><i class="bi bi-activity"></i> Progress Tracker</a>
+                <a href="#" class="sidebar-link" data-parent-target="parent-resources"
+                    data-admin-target="admin-resources"><i class="bi bi-book"></i> Resources</a>
                 <a href="#" class="sidebar-link mt-5 text-danger"><i class="bi bi-box-arrow-left"></i> Logout</a>
             </nav>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
+            <div class="dashboard-content-bar">
+                <a class="navbar-brand m-0" href="index.html">
+                    <img src="assets/images/logo.svg" alt="Kinderly Logo" height="40">
+                </a>
+                <div class="dashboard-content-actions">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button class="btn btn-outline-primary dashboard-icon-btn" id="rtlToggle" title="Toggle RTL">
+                        <i class="bi bi-translate"></i>
+                    </button>
+                </div>
+            </div>
             <!-- Parent View -->
             <div id="parentView">
                 <section class="dashboard-panel active" id="parent-overview">
@@ -295,7 +561,7 @@
                         <div class="col-md-8">
                             <div class="premium-card">
                                 <h5 class="fw-bold mb-3">Next Session</h5>
-                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="dashboard-stack-item">
                                     <div>
                                         <h6 class="mb-1">Articulation Therapy</h6>
                                         <p class="text-secondary small mb-0">Tomorrow, 10:00 AM with Sarah Collins</p>
@@ -311,7 +577,8 @@
                             <div class="dashboard-summary-card">
                                 <span class="badge bg-white text-primary mb-3">At Home This Week</span>
                                 <h4 class="fw-bold mb-2">Keep momentum going with short daily practice.</h4>
-                                <p class="text-secondary mb-4">Use the picture naming set, sound sorting game, and story prompts shared by your therapist.</p>
+                                <p class="text-secondary mb-4">Use the picture naming set, sound sorting game, and story
+                                    prompts shared by your therapist.</p>
                                 <a href="resources.html" class="btn btn-primary rounded-pill">Open Resources</a>
                             </div>
                         </div>
@@ -324,7 +591,8 @@
                                 </div>
                                 <div class="mb-3">
                                     <div class="small text-secondary">Session Highlight</div>
-                                    <div class="fw-semibold">Leo used longer phrases independently in storytelling.</div>
+                                    <div class="fw-semibold">Leo used longer phrases independently in storytelling.
+                                    </div>
                                 </div>
                                 <div>
                                     <div class="small text-secondary">Next Goal</div>
@@ -344,21 +612,21 @@
                         <div class="col-lg-7">
                             <div class="dashboard-section-card">
                                 <h5 class="fw-bold mb-4">Upcoming Sessions</h5>
-                                <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                                <div class="dashboard-stack-item py-3 border-bottom">
                                     <div>
                                         <div class="fw-semibold">Articulation Therapy</div>
                                         <div class="text-secondary small">Tomorrow, 10:00 AM with Sarah Collins</div>
                                     </div>
                                     <span class="badge bg-primary-soft text-primary">Confirmed</span>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                                <div class="dashboard-stack-item py-3 border-bottom">
                                     <div>
                                         <div class="fw-semibold">Parent Coaching Check-In</div>
                                         <div class="text-secondary small">Friday, 4:30 PM online</div>
                                     </div>
                                     <span class="badge bg-secondary-soft text-secondary">Scheduled</span>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center py-3">
+                                <div class="dashboard-stack-item py-3">
                                     <div>
                                         <div class="fw-semibold">Monthly Review</div>
                                         <div class="text-secondary small">June 28, 11:00 AM in clinic</div>
@@ -383,23 +651,34 @@
                 <section class="dashboard-panel" id="parent-progress">
                     <header class="mb-5">
                         <h2 class="fw-bold mb-1">Progress Tracker</h2>
-                        <p class="text-secondary mb-0">Review current goals, recent wins, and detailed progress reports.</p>
+                        <p class="text-secondary mb-0">Review current goals, recent wins, and detailed progress reports.
+                        </p>
                     </header>
                     <div class="row g-4">
                         <div class="col-lg-8">
                             <div class="dashboard-section-card">
                                 <h5 class="fw-bold mb-4">Current Therapy Goals</h5>
                                 <div class="mb-4">
-                                    <div class="d-flex justify-content-between small mb-2"><span>Speech Sound Accuracy</span><span>82%</span></div>
-                                    <div class="progress" style="height: 10px;"><div class="progress-bar bg-primary" style="width: 82%"></div></div>
+                                    <div class="d-flex justify-content-between small mb-2"><span>Speech Sound
+                                            Accuracy</span><span>82%</span></div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar bg-primary" style="width: 82%"></div>
+                                    </div>
                                 </div>
                                 <div class="mb-4">
-                                    <div class="d-flex justify-content-between small mb-2"><span>Sentence Expansion</span><span>70%</span></div>
-                                    <div class="progress" style="height: 10px;"><div class="progress-bar" style="width: 70%; background: var(--secondary-color);"></div></div>
+                                    <div class="d-flex justify-content-between small mb-2"><span>Sentence
+                                            Expansion</span><span>70%</span></div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar"
+                                            style="width: 70%; background: var(--secondary-color);"></div>
+                                    </div>
                                 </div>
                                 <div>
-                                    <div class="d-flex justify-content-between small mb-2"><span>Conversation Carryover</span><span>65%</span></div>
-                                    <div class="progress" style="height: 10px;"><div class="progress-bar bg-primary" style="width: 65%"></div></div>
+                                    <div class="d-flex justify-content-between small mb-2"><span>Conversation
+                                            Carryover</span><span>65%</span></div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar bg-primary" style="width: 65%"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -419,20 +698,23 @@
                 <section class="dashboard-panel" id="parent-resources">
                     <header class="mb-5">
                         <h2 class="fw-bold mb-1">Resources</h2>
-                        <p class="text-secondary mb-0">Helpful activities and guides matched to current therapy goals.</p>
+                        <p class="text-secondary mb-0">Helpful activities and guides matched to current therapy goals.
+                        </p>
                     </header>
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="dashboard-section-card">
                                 <h5 class="fw-bold">Recommended This Week</h5>
-                                <p class="text-secondary">Story retell prompts, articulation practice cards, and sentence-building games.</p>
+                                <p class="text-secondary">Story retell prompts, articulation practice cards, and
+                                    sentence-building games.</p>
                                 <a href="resources.html" class="btn btn-primary rounded-pill">Browse Resources</a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="dashboard-section-card">
                                 <h5 class="fw-bold">Parent Tips</h5>
-                                <p class="text-secondary">Keep practice playful, model slowly, and celebrate attempts before correcting.</p>
+                                <p class="text-secondary">Keep practice playful, model slowly, and celebrate attempts
+                                    before correcting.</p>
                                 <a href="resources.html" class="btn btn-outline-primary rounded-pill">View Guides</a>
                             </div>
                         </div>
@@ -449,19 +731,19 @@
                     </header>
 
                     <div class="row g-4 mb-5">
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-lg-3">
                             <div class="premium-card text-center">
                                 <h3 class="fw-bold text-primary">12</h3>
                                 <p class="text-secondary small mb-0">Active Patients</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-lg-3">
                             <div class="premium-card text-center">
                                 <h3 class="fw-bold text-secondary">5</h3>
                                 <p class="text-secondary small mb-0">Today's Sessions</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-12">
                             <div class="premium-card">
                                 <h5 class="fw-bold mb-3">Quick Actions</h5>
                                 <div class="d-flex gap-2 flex-wrap">
@@ -476,7 +758,7 @@
                     <div class="premium-card">
                         <h5 class="fw-bold mb-4">Patient Queue</h5>
                         <div class="table-responsive">
-                            <table class="table align-middle">
+                            <table class="table align-middle dashboard-table">
                                 <thead class="text-secondary small">
                                     <tr>
                                         <th>Patient Name</th>
@@ -492,14 +774,17 @@
                                         <td>Speech Delay</td>
                                         <td>2 days ago</td>
                                         <td><span class="badge bg-primary-soft text-primary">Active</span></td>
-                                        <td><button class="btn btn-light btn-sm"><i class="bi bi-pencil"></i></button></td>
+                                        <td><button class="btn btn-light btn-sm"><i class="bi bi-pencil"></i></button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Emma Wilson</td>
                                         <td>Articulation</td>
                                         <td>5 days ago</td>
-                                        <td><span class="badge bg-secondary-soft text-secondary">Pending Review</span></td>
-                                        <td><button class="btn btn-light btn-sm"><i class="bi bi-pencil"></i></button></td>
+                                        <td><span class="badge bg-secondary-soft text-secondary">Pending Review</span>
+                                        </td>
+                                        <td><button class="btn btn-light btn-sm"><i class="bi bi-pencil"></i></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -516,21 +801,21 @@
                         <div class="col-lg-8">
                             <div class="dashboard-section-card">
                                 <h5 class="fw-bold mb-4">Today's Schedule</h5>
-                                <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                                <div class="dashboard-stack-item py-3 border-bottom">
                                     <div>
                                         <div class="fw-semibold">9:00 AM - Emma Wilson</div>
                                         <div class="text-secondary small">Articulation review</div>
                                     </div>
                                     <span class="badge bg-primary-soft text-primary">Checked In</span>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                                <div class="dashboard-stack-item py-3 border-bottom">
                                     <div>
                                         <div class="fw-semibold">10:00 AM - Leo Smith</div>
                                         <div class="text-secondary small">Speech delay follow-up</div>
                                     </div>
                                     <span class="badge bg-secondary-soft text-secondary">Upcoming</span>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center py-3">
+                                <div class="dashboard-stack-item py-3">
                                     <div>
                                         <div class="fw-semibold">1:30 PM - Ava Brown</div>
                                         <div class="text-secondary small">Parent coaching session</div>
@@ -568,14 +853,16 @@
                             <div class="dashboard-section-card">
                                 <h5 class="fw-bold">Improvement Rate</h5>
                                 <h3 class="text-secondary fw-bold mt-3">81%</h3>
-                                <p class="text-secondary mb-0 small">Average weekly milestone completion across caseload.</p>
+                                <p class="text-secondary mb-0 small">Average weekly milestone completion across
+                                    caseload.</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="dashboard-section-card">
                                 <h5 class="fw-bold">Needs Attention</h5>
                                 <h3 class="text-primary fw-bold mt-3">2</h3>
-                                <p class="text-secondary mb-0 small">Patients requiring updated plans or parent follow-up.</p>
+                                <p class="text-secondary mb-0 small">Patients requiring updated plans or parent
+                                    follow-up.</p>
                             </div>
                         </div>
                     </div>
@@ -590,15 +877,18 @@
                         <div class="col-md-6">
                             <div class="dashboard-section-card">
                                 <h5 class="fw-bold">Shared Library</h5>
-                                <p class="text-secondary">Update printable activities, therapy handouts, and assigned home practice resources.</p>
+                                <p class="text-secondary">Update printable activities, therapy handouts, and assigned
+                                    home practice resources.</p>
                                 <button class="btn btn-primary rounded-pill">Manage Library</button>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="dashboard-section-card">
                                 <h5 class="fw-bold">Recently Assigned</h5>
-                                <p class="text-secondary">Story Retell Cards, Articulation Bingo, and Parent Coaching Notes.</p>
-                                <a href="resources.html" class="btn btn-outline-primary rounded-pill">Open Resources Page</a>
+                                <p class="text-secondary">Story Retell Cards, Articulation Bingo, and Parent Coaching
+                                    Notes.</p>
+                                <a href="resources.html" class="btn btn-outline-primary rounded-pill">Open Resources
+                                    Page</a>
                             </div>
                         </div>
                     </div>
@@ -611,4 +901,5 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/dashboard.js"></script>
 </body>
+
 </html>

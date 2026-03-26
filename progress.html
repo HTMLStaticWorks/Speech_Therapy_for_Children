@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progress Tracking - Kinder Speech Therapy</title>
-    <meta name="description" content="Track your child's speech therapy progress with Kinderly. Monitor milestones, view session notes, and see communication growth over time. Advanced analytics for parents and therapists.">
-    <meta name="keywords" content="progress tracking, therapy progress, session notes, milestones, child development tracking">
+    <meta name="description"
+        content="Track your child's speech therapy progress with Kinderly. Monitor milestones, view session notes, and see communication growth over time. Advanced analytics for parents and therapists.">
+    <meta name="keywords"
+        content="progress tracking, therapy progress, session notes, milestones, child development tracking">
     <meta name="author" content="Kinder Speech Therapy">
     <meta property="og:title" content="Progress Tracking - Kinder">
-    <meta property="og:description" content="Monitor your child's speech therapy progress with detailed tracking and insights.">
+    <meta property="og:description"
+        content="Monitor your child's speech therapy progress with detailed tracking and insights.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Kinder Progress Tracking">
@@ -30,6 +34,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .progress-circle::after {
             content: attr(data-label);
             position: absolute;
@@ -47,13 +52,18 @@
             font-size: 1.2rem;
             color: #1a1a1a;
         }
+
         .milestone-item {
             padding-left: 40px;
             position: relative;
             border-left: 2px dashed var(--border-color);
             padding-bottom: 40px;
         }
-        .milestone-item:last-child { border-left: none; }
+
+        .milestone-item:last-child {
+            border-left: none;
+        }
+
         .milestone-dot {
             position: absolute;
             left: -11px;
@@ -65,7 +75,12 @@
             border: 4px solid var(--card-bg);
             box-shadow: 0 0 0 2px var(--primary-color);
         }
-        .milestone-item.completed .milestone-dot { background: var(--accent-color); box-shadow: 0 0 0 2px var(--accent-color); }
+
+        .milestone-item.completed .milestone-dot {
+            background: var(--accent-color);
+            box-shadow: 0 0 0 2px var(--accent-color);
+        }
+
         .chart-bar {
             height: 12px;
             border-radius: 6px;
@@ -73,29 +88,35 @@
             overflow: hidden;
             margin-bottom: 20px;
         }
+
         .chart-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
             transition: width 1s ease-out;
         }
+
         .progress-hero {
             background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('assets/images/contact-hero-bg.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         [data-bs-theme="dark"] .progress-hero {
             background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('assets/images/contact-hero-bg.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .progress-overview-section {
             background: linear-gradient(180deg, rgba(255, 248, 241, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
         }
+
         [data-bs-theme="dark"] .progress-overview-section {
             background: linear-gradient(180deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0) 100%);
         }
+
         .progress-summary-card {
             border: 1px solid var(--border-color);
             border-radius: 28px;
@@ -105,10 +126,12 @@
             height: 100%;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .progress-summary-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-lg);
         }
+
         .progress-summary-media {
             width: 64px;
             height: 64px;
@@ -118,11 +141,13 @@
             border: 4px solid #ffffff;
             box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
         }
+
         .progress-summary-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .progress-highlight-card {
             border-radius: 30px;
             padding: 2rem;
@@ -130,6 +155,7 @@
             color: white;
             box-shadow: 0 24px 50px rgba(255, 87, 123, 0.25);
         }
+
         .progress-panel-card {
             border-radius: 30px;
             padding: 2rem;
@@ -138,6 +164,7 @@
             box-shadow: var(--shadow-sm);
             height: 100%;
         }
+
         .progress-stat-chip {
             border-radius: 18px;
             padding: 1rem 1.1rem;
@@ -149,6 +176,7 @@
             flex-direction: column;
             justify-content: space-between;
         }
+
         .progress-grid-card {
             border-radius: 24px;
             background: var(--card-bg);
@@ -157,12 +185,15 @@
             padding: 1.75rem;
             height: 100%;
         }
+
         .progress-grid-card h5 {
             margin-bottom: 0.35rem;
         }
+
         .progress-section-title {
             color: var(--text-primary);
         }
+
         .progress-note-card {
             border-radius: 30px;
             background: var(--card-bg);
@@ -170,10 +201,12 @@
             box-shadow: var(--shadow-lg);
             padding: 2rem;
         }
+
         .progress-note-quote {
             font-style: italic;
             line-height: 1.7;
         }
+
         .milestone-badge {
             border-radius: 999px;
             padding: 0.45rem 0.9rem;
@@ -181,46 +214,61 @@
             font-weight: 700;
             display: inline-block;
         }
+
         .milestone-badge.completed {
             background: rgba(255, 184, 0, 0.14);
             color: var(--secondary-color);
         }
+
         .milestone-badge.pending {
             background: rgba(255, 87, 123, 0.1);
             color: var(--primary-color);
         }
+
         [data-bs-theme="dark"] .progress-grid-card,
         [data-bs-theme="dark"] .progress-summary-card,
         [data-bs-theme="dark"] .progress-panel-card,
         [data-bs-theme="dark"] .progress-note-card {
-            background: #1e293b;
-            border-color: #334155;
+            background: #121212;
+            border-color: #2D2D2D;
         }
+
         [data-bs-theme="dark"] .progress-summary-media {
-            border-color: #1e293b;
-            box-shadow: 0 12px 24px rgba(2, 6, 23, 0.35);
+            border-color: #2D2D2D;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
         }
+
         [data-bs-theme="dark"] .chart-bar {
-            background: #334155;
+            background: #2D2D2D;
         }
+
         [data-bs-theme="dark"] .progress-circle::after {
-            color: #0f172a;
+            color: #FFFFFF;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/images/hero_2.png');
         }
+
         [data-bs-theme="dark"] .text-muted {
             color: #cbd5e1 !important;
         }
     </style>
 </head>
+
 <body>
     <div class="decorative-bg">
-        <svg class="deco-shape float-slow" width="110" height="110" viewBox="0 0 24 24" style="top: 14%; left: -2%; color: var(--primary-color);">
-            <path fill="currentColor" d="M12 1L14.39 8.26H22L15.81 12.75L18.19 20L12 15.5L5.81 20L8.19 12.75L2 8.26H9.61L12 1Z"/>
+        <svg class="deco-shape float-slow" width="110" height="110" viewBox="0 0 24 24"
+            style="top: 14%; left: -2%; color: var(--primary-color);">
+            <path fill="currentColor"
+                d="M12 1L14.39 8.26H22L15.81 12.75L18.19 20L12 15.5L5.81 20L8.19 12.75L2 8.26H9.61L12 1Z" />
         </svg>
-        <svg class="deco-shape float-slow-reverse" width="90" height="90" viewBox="0 0 24 24" style="top: 38%; right: 2%; color: var(--secondary-color);">
-            <path fill="currentColor" d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.41 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.59 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z"/>
+        <svg class="deco-shape float-slow-reverse" width="90" height="90" viewBox="0 0 24 24"
+            style="top: 38%; right: 2%; color: var(--secondary-color);">
+            <path fill="currentColor"
+                d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.41 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.59 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z" />
         </svg>
-        <svg class="deco-shape float-slow" width="150" height="150" viewBox="0 0 24 24" style="bottom: 12%; left: 6%; color: var(--accent-color);">
-            <path fill="currentColor" d="M17.5 19C15.01 19 13 16.99 13 14.5C13 14.36 13.01 14.23 13.03 14.1C12.7 14.04 12.35 14 12 14C9.24 14 7 11.76 7 9C7 6.24 9.24 4 12 4C14.31 4 16.25 5.56 16.8 7.69C17.03 7.62 17.26 7.59 17.5 7.59C19.43 7.59 21 9.16 21 11.09C21 11.85 20.76 12.55 20.35 13.13C20.75 13.75 21 14.47 21 15.25C21 17.32 19.43 19 17.5 19Z"/>
+        <svg class="deco-shape float-slow" width="150" height="150" viewBox="0 0 24 24"
+            style="bottom: 12%; left: 6%; color: var(--accent-color);">
+            <path fill="currentColor"
+                d="M17.5 19C15.01 19 13 16.99 13 14.5C13 14.36 13.01 14.23 13.03 14.1C12.7 14.04 12.35 14 12 14C9.24 14 7 11.76 7 9C7 6.24 9.24 4 12 4C14.31 4 16.25 5.56 16.8 7.69C17.03 7.62 17.26 7.59 17.5 7.59C19.43 7.59 21 9.16 21 11.09C21 11.85 20.76 12.55 20.35 13.13C20.75 13.75 21 14.47 21 15.25C21 17.32 19.43 19 17.5 19Z" />
         </svg>
     </div>
 
@@ -259,19 +307,21 @@
                     <button class="theme-toggle d-none d-lg-block" id="themeToggle" title="Toggle Theme">
                         <i class="bi bi-moon-stars"></i>
                     </button>
-                    <button class="btn btn-outline-primary btn-sm rounded-circle d-none d-lg-flex align-items-center justify-content-center" id="rtlToggle" style="width: 35px; height: 35px;" title="Toggle RTL">
+                    <button
+                        class="btn btn-outline-primary btn-sm rounded-circle d-none d-lg-flex align-items-center justify-content-center"
+                        id="rtlToggle" style="width: 35px; height: 35px;" title="Toggle RTL">
                         <i class="bi bi-translate"></i>
                     </button>
                     <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                            data-bs-toggle="dropdown">
                             <i class="bi bi-person-circle fs-5"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="dashboard.html?role=admin">Admin View</a></li>
-                            <li><a class="dropdown-item" href="dashboard.html?role=parent">Parents View</a></li>
+                            <li><a class="dropdown-item" href="dashboard.html?role=admin">Admin Dashboard</a></li>
+                            <li><a class="dropdown-item" href="dashboard.html?role=parent">Parents Dashboard</a></li>
                         </ul>
                     </div>
-                    <a href="contact.html" class="btn btn-primary px-4 d-none d-lg-block">Book Now</a>
                     <a href="register.html" class="btn btn-outline-primary px-4 d-none d-lg-block">Sign Up</a>
                 </div>
             </div>
@@ -313,7 +363,6 @@
                     <a class="nav-link fw-bold" href="dashboard.html?role=parent">Parents Dashboard</a>
                 </li>
                 <li class="nav-item d-grid gap-2">
-                    <a class="btn btn-primary" href="contact.html">Book Now</a>
                     <a class="btn btn-outline-primary" href="register.html">Sign Up</a>
                 </li>
             </ul>
@@ -324,8 +373,10 @@
     <header class="contact-hero progress-hero reveal">
         <div class="container">
             <h1 class="fw-bold">Progress Tracking</h1>
-            <p class="lead mb-0">Follow each milestone, celebrate meaningful wins, and stay connected to your child's therapy journey.</p>
-            <p class="lead">A clear snapshot helps families understand growth, next goals, and how to support progress at home.</p>
+            <p class="lead mb-0">Follow each milestone, celebrate meaningful wins, and stay connected to your child's
+                therapy journey.</p>
+            <p class="lead">A clear snapshot helps families understand growth, next goals, and how to support progress
+                at home.</p>
         </div>
     </header>
 
@@ -337,9 +388,10 @@
                     <div class="progress-highlight-card h-100">
                         <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-4">
                             <div>
-                                
+
                                 <h2 class="fw-bold mb-2">Tracking Every Step Forward</h2>
-                                <p class="mb-0 opacity-75">A simple way for families to monitor communication gains, session outcomes, and upcoming goals.</p>
+                                <p class="mb-0 opacity-75">A simple way for families to monitor communication gains,
+                                    session outcomes, and upcoming goals.</p>
                             </div>
                             <div class="progress-circle" style="--percentage: 75%;" data-label="75%"></div>
                         </div>
@@ -376,7 +428,8 @@
                                     <img src="assets/images/hero_1.png" alt="Child communication support session">
                                 </div>
                                 <h5 class="fw-bold">Current Focus</h5>
-                                <p class="text-secondary mb-0">Strengthening sentence expansion, carryover in conversation, and clearer target sound production.</p>
+                                <p class="text-secondary mb-0">Strengthening sentence expansion, carryover in
+                                    conversation, and clearer target sound production.</p>
                             </div>
                         </div>
                         <div class="col-md-6 reveal" style="transition-delay: 0.1s;">
@@ -385,7 +438,8 @@
                                     <img src="assets/images/card_parent.png" alt="Parent-guided home practice support">
                                 </div>
                                 <h5 class="fw-bold">Home Practice</h5>
-                                <p class="text-secondary mb-0">Use story retell prompts three times a week and continue the Silent E matching game for 10 minutes daily.</p>
+                                <p class="text-secondary mb-0">Use story retell prompts three times a week and continue
+                                    the Silent E matching game for 10 minutes daily.</p>
                             </div>
                         </div>
                         <div class="col-md-6 reveal" style="transition-delay: 0.2s;">
@@ -394,7 +448,8 @@
                                     <img src="assets/images/hero_2.png" alt="Child celebrating progress in therapy">
                                 </div>
                                 <h5 class="fw-bold">Biggest Win</h5>
-                                <p class="text-secondary mb-0">Leo is initiating more confidently during play and using longer phrases with less prompting.</p>
+                                <p class="text-secondary mb-0">Leo is initiating more confidently during play and using
+                                    longer phrases with less prompting.</p>
                             </div>
                         </div>
                         <div class="col-md-6 reveal" style="transition-delay: 0.3s;">
@@ -403,7 +458,8 @@
                                     <img src="assets/images/card_school.png" alt="Structured school readiness planning">
                                 </div>
                                 <h5 class="fw-bold">Next Session Goal</h5>
-                                <p class="text-secondary mb-0">Increase accuracy for /s/ blends in short phrases and build smoother storytelling transitions.</p>
+                                <p class="text-secondary mb-0">Increase accuracy for /s/ blends in short phrases and
+                                    build smoother storytelling transitions.</p>
                             </div>
                         </div>
                     </div>
@@ -418,7 +474,8 @@
             <div class="text-center mb-5 reveal">
                 <span class="badge bg-secondary-soft text-secondary px-3 py-2 mb-3">Progress Snapshot</span>
                 <h2 class="display-5 fw-bold progress-section-title">A Clear View of Growth</h2>
-                <p class="text-secondary">Track performance across the skills that matter most in daily communication.</p>
+                <p class="text-secondary">Track performance across the skills that matter most in daily communication.
+                </p>
             </div>
             <div class="row g-4">
                 <div class="col-md-4 reveal">
@@ -429,7 +486,9 @@
                             <h2 class="mb-2 fw-bold">82%</h2>
                             <span class="text-secondary small mb-1"><i class="bi bi-caret-up-fill"></i> 5%</span>
                         </div>
-                        <div class="chart-bar"><div class="chart-fill" style="width: 82%"></div></div>
+                        <div class="chart-bar">
+                            <div class="chart-fill" style="width: 82%"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 reveal" style="transition-delay: 0.1s;">
@@ -440,7 +499,9 @@
                             <h2 class="mb-2 fw-bold">120+</h2>
                             <span class="text-secondary small mb-1"><i class="bi bi-caret-up-fill"></i> 12</span>
                         </div>
-                        <div class="chart-bar"><div class="chart-fill" style="width: 65%"></div></div>
+                        <div class="chart-bar">
+                            <div class="chart-fill" style="width: 65%"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 reveal" style="transition-delay: 0.2s;">
@@ -451,7 +512,9 @@
                             <h2 class="mb-0 fw-bold">High</h2>
                             <span class="text-secondary small mb-1">Steady growth</span>
                         </div>
-                        <div class="chart-bar"><div class="chart-fill" style="width: 90%"></div></div>
+                        <div class="chart-bar">
+                            <div class="chart-fill" style="width: 90%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -497,13 +560,16 @@
                             <span class="badge bg-secondary-soft text-secondary px-3 py-2">Weekly Update</span>
                         </div>
                         <div class="d-flex gap-3 mb-4">
-                            <img src="assets/images/team_1.png" class="rounded-circle object-fit-cover" width="50" height="50" alt="SLP">
+                            <img src="assets/images/team_1.png" class="rounded-circle object-fit-cover" width="50"
+                                height="50" alt="SLP">
                             <div>
                                 <h6 class="mb-1">Sarah Collins, SLP</h6>
                                 <p class="mb-0 text-muted small">March 22, 2024</p>
                             </div>
                         </div>
-                        <p class="text-secondary progress-note-quote">"Leo is showing great enthusiasm during our 'Story Dice' game. His production of 's' clusters has improved significantly this week. I recommend continuing the 'Silent E' matching game at home."</p>
+                        <p class="text-secondary progress-note-quote">"Leo is showing great enthusiasm during our 'Story
+                            Dice' game. His production of 's' clusters has improved significantly this week. I recommend
+                            continuing the 'Silent E' matching game at home."</p>
                         <hr>
                         <div class="d-grid gap-2">
                             <a href="dashboard.html" class="btn btn-primary rounded-pill">Download Detailed Report</a>
@@ -537,9 +603,12 @@
                 <div class="col-md-4 col-lg-2">
                     <h5 class="mb-4">Quick Links</h5>
                     <ul class="list-unstyled footer-links">
-                        <li class="mb-2"><a href="about.html" class="text-decoration-none text-secondary">About Us</a></li>
-                        <li class="mb-2"><a href="services.html" class="text-decoration-none text-secondary">Services</a></li>
-                        <li class="mb-2"><a href="pricing.html" class="text-decoration-none text-secondary">Pricing</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none text-secondary">About Us</a>
+                        </li>
+                        <li class="mb-2"><a href="services.html"
+                                class="text-decoration-none text-secondary">Services</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-decoration-none text-secondary">Pricing</a>
+                        </li>
                         <li class="mb-2"><a href="blog.html" class="text-decoration-none text-secondary">Blog</a></li>
                     </ul>
                 </div>
@@ -577,4 +646,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

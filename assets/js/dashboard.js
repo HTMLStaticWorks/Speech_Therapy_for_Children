@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
-    const roleSwitcher = document.getElementById('roleSwitcher');
+    const roleSwitcherBtn = document.getElementById('roleSwitcherBtn');
+    const activeRoleText = document.getElementById('activeRoleText');
+    const roleSwitcherItems = document.querySelectorAll('#roleSwitcherMenu .dropdown-item');
     const parentView = document.getElementById('parentView');
     const adminView = document.getElementById('adminView');
     const sidebar = document.getElementById('dashboardSidebar');
@@ -8,9 +10,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const topbarToggle = document.getElementById('dashboardTopbarToggle');
     const sidebarClose = document.getElementById('dashboardSidebarClose');
     const sidebarLinks = Array.from(document.querySelectorAll('.sidebar-link[data-parent-target]'));
+    const profileImage = document.getElementById('dashboardProfileImage');
+    const profileName = document.getElementById('dashboardProfileName');
+    const profileRole = document.getElementById('dashboardProfileRole');
+    const roleProfiles = {
+        admin: {
+            name: 'Sarah Collins',
+            role: 'Speech Therapist',
+            image: 'assets/images/team_1.png',
+            alt: 'Sarah Collins profile'
+        },
+        parent: {
+            name: 'Mark Smith',
+            role: 'Parent',
+            image: 'assets/images/team_2.png',
+            alt: 'Mark Smith profile'
+        }
+    };
 
     function getCurrentRole() {
-        return roleSwitcher?.value === 'admin' ? 'admin' : 'parent';
+        return activeRoleText?.textContent.includes('Admin') ? 'admin' : 'parent';
     }
 
     function setActivePanel(targetId) {
@@ -31,6 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const isAdmin = role === 'admin';
         if (parentView) parentView.style.display = isAdmin ? 'none' : 'block';
         if (adminView) adminView.style.display = isAdmin ? 'block' : 'none';
+
+        const profile = roleProfiles[role] || roleProfiles.parent;
+        if (profileImage) {
+            profileImage.src = profile.image;
+            profileImage.alt = profile.alt;
+        }
+        if (profileName) profileName.textContent = profile.name;
+        if (profileRole) profileRole.textContent = profile.role;
 
         const activeLink = sidebarLinks.find((link) => link.classList.contains('active')) || sidebarLinks[0];
         const target = isAdmin ? activeLink?.dataset.adminTarget : activeLink?.dataset.parentTarget;
@@ -53,11 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.remove('overflow-hidden');
     }
 
-    roleSwitcher?.addEventListener('change', (event) => {
-        applyRole(event.target.value);
-        if (window.innerWidth <= 1024) {
-            closeSidebar();
-        }
+    roleSwitcherItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const role = e.target.dataset.value;
+            activeRoleText.textContent = e.target.textContent;
+            applyRole(role);
+            if (window.innerWidth <= 1024) {
+                closeSidebar();
+            }
+        });
     });
 
     sidebarLinks.forEach((link) => {
@@ -78,10 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
     sidebarClose?.addEventListener('click', closeSidebar);
     backdrop?.addEventListener('click', closeSidebar);
 
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+            closeSidebar();
+        }
+    });
+
     const params = new URLSearchParams(window.location.search);
     const initialRole = params.get('role') === 'admin' ? 'admin' : 'parent';
-    if (roleSwitcher) {
-        roleSwitcher.value = initialRole;
+    if (activeRoleText) {
+        activeRoleText.textContent = initialRole === 'admin' ? 'Admin View' : 'Parent View';
     }
     applyRole(initialRole);
 });
