@@ -1,0 +1,67 @@
+/* RTL Support for SpeechCare */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .navbar-nav {
+    padding-right: 0;
+}
+
+[dir="rtl"] .dropdown-menu {
+    text-align: right;
+}
+
+[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .sidebar {
+    right: 0;
+    left: auto;
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .main-content {
+    margin-right: var(--sidebar-width);
+    margin-left: 0;
+}
+
+[dir="rtl"] .sidebar-link i {
+    margin-left: 12px;
+    margin-right: 0;
+}
+
+[dir="rtl"] .footer-links {
+    padding-right: 0;
+}
+
+[dir="rtl"] .milestone-item {
+    padding-right: 40px;
+    padding-left: 0;
+    border-right: 2px dashed var(--border-color);
+    border-left: none;
+}
+
+[dir="rtl"] .milestone-dot {
+    right: -11px;
+    left: auto;
+}
+
+@media (max-width: 1024px) {
+    [dir="rtl"] .sidebar {
+        transform: translateX(100%);
+    }
+    [dir="rtl"] .sidebar.show {
+        transform: translateX(0);
+    }
+    [dir="rtl"] .main-content {
+        margin-right: 0;
+    }
+}

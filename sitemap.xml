@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Home Pages -->
+    <url>
+        <loc>https://www.kinder.com/index.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.kinder.com/home-2.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Main Pages -->
+    <url>
+        <loc>https://www.kinder.com/about.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.kinder.com/services.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://www.kinder.com/service-details.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://www.kinder.com/contact.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.kinder.com/resources.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://www.kinder.com/progress.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <!-- Authentication Pages (No-index but included for completeness) -->
+    <url>
+        <loc>https://www.kinder.com/login.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://www.kinder.com/register.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.3</priority>
+    </url>
+</urlset>

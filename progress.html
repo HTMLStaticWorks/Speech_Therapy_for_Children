@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracking - Kinder Speech Therapy</title>
+    <meta name="description" content="Track your child's speech therapy progress with Kinderly. Monitor milestones, view session notes, and see communication growth over time. Advanced analytics for parents and therapists.">
+    <meta name="keywords" content="progress tracking, therapy progress, session notes, milestones, child development tracking">
+    <meta name="author" content="Kinder Speech Therapy">
+    <meta property="og:title" content="Progress Tracking - Kinder">
+    <meta property="og:description" content="Monitor your child's speech therapy progress with detailed tracking and insights.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Kinder Progress Tracking">
+    <meta name="twitter:description" content="Track your child's speech therapy progress.">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" id="rtlStyle" href="assets/css/rtl.css" disabled>
+    <style>
+        .progress-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient(var(--primary-color) var(--percentage), #e2e8f0 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .progress-circle::after {
+            content: attr(data-label);
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .milestone-item {
+            padding-left: 40px;
+            position: relative;
+            border-left: 2px dashed var(--border-color);
+            padding-bottom: 40px;
+        }
+        .milestone-item:last-child { border-left: none; }
+        .milestone-dot {
+            position: absolute;
+            left: -11px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+        .milestone-item.completed .milestone-dot { background: var(--accent-color); box-shadow: 0 0 0 2px var(--accent-color); }
+        .chart-bar {
+            height: 12px;
+            border-radius: 6px;
+            background: #e2e8f0;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .chart-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transition: width 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.svg" alt="Kinderly Logo" height="40">
+            </a>
+
+            <div class="d-flex align-items-center gap-3 d-lg-none">
+                <button class="theme-toggle" id="themeToggleMobile">
+                    <i class="bi bi-moon-stars"></i>
+                </button>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1 (Classic)</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Home 2 (Modern)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle d-none d-lg-block" id="themeToggle" title="Toggle Theme">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm rounded-circle d-none d-lg-flex align-items-center justify-content-center" id="rtlToggle" style="width: 35px; height: 35px;" title="Toggle RTL">
+                        <i class="bi bi-translate"></i>
+                    </button>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle fs-5"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="dashboard.html?role=admin">Admin View</a></li>
+                            <li><a class="dropdown-item" href="dashboard.html?role=parent">Parents View</a></li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary px-4 d-none d-lg-block">Book Now</a>
+                    <a href="register.html" class="btn btn-outline-primary px-4 d-none d-lg-block">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (Offcanvas) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold color-primary">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav gap-3">
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <hr>
+                <li class="nav-item">
+                    <button class="btn btn-outline-primary w-100 mb-3" id="rtlToggleMobile">
+                        <i class="bi bi-translate me-2"></i> RTL Mode
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="dashboard.html?role=admin">Admin Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="dashboard.html?role=parent">Parents Dashboard</a>
+                </li>
+                <li class="nav-item d-grid gap-2">
+                    <a class="btn btn-primary" href="contact.html">Book Now</a>
+                    <a class="btn btn-outline-primary" href="register.html">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Progress Hero -->
+    <section class="mt-5 pt-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal">
+                    <span class="badge bg-primary-soft text-primary mb-3 px-3 py-2">Patient: Leo Smith</span>
+                    <h1 class="display-4 fw-bold mb-4">Tracking Every <span class="text-gradient">Step Forward</span></h1>
+                    <p class="lead text-secondary">Celebrate your child's growth and stay informed about their development journey.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="premium-card bg-primary text-white p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="mb-0">Overall Goal Completion</h5>
+                            <span class="fs-4 fw-bold">75%</span>
+                        </div>
+                        <div class="progress" style="height: 10px; background: rgba(255,255,255,0.2);">
+                            <div class="progress-bar bg-white" style="width: 75%"></div>
+                        </div>
+                        <p class="mt-3 mb-0 small opacity-75">Target completion by June 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Stats -->
+    <section class="bg-light-soft">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 reveal">
+                    <div class="premium-card h-100">
+                        <h5>Articulation Accuracy</h5>
+                        <p class="text-muted small mb-4">Ability to produce Target sounds</p>
+                        <div class="d-flex align-items-end gap-2 mb-3">
+                            <h2 class="mb-2 fw-bold">82%</h2>
+                            <span class="text-success small mb-1"><i class="bi bi-caret-up-fill"></i> 5%</span>
+                        </div>
+                        <div class="chart-bar"><div class="chart-fill" style="width: 82%"></div></div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal" style="transition-delay: 0.1s;">
+                    <div class="premium-card h-100">
+                        <h5>Vocabulary Growth</h5>
+                        <p class="text-muted small mb-4">New words used in context</p>
+                        <div class="d-flex align-items-end gap-2 mb-3">
+                            <h2 class="mb-2 fw-bold">120+</h2>
+                            <span class="text-success small mb-1"><i class="bi bi-caret-up-fill"></i> 12</span>
+                        </div>
+                        <div class="chart-bar"><div class="chart-fill" style="width: 65%"></div></div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal" style="transition-delay: 0.2s;">
+                    <div class="premium-card h-100">
+                        <h5>Social Confidence</h5>
+                        <p class="text-muted small mb-4">Eye contact and turn-taking</p>
+                        <div class="d-flex align-items-end gap-2 mb-3">
+                            <h2 class="mb-0 fw-bold">High</h2>
+                            <span class="text-success small mb-1">Steady growth</span>
+                        </div>
+                        <div class="chart-bar"><div class="chart-fill" style="width: 90%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Milestone Timeline -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 reveal">
+                    <h3 class="fw-bold mb-5">Journey Milestones</h3>
+                    <div class="milestone-item completed">
+                        <div class="milestone-dot"></div>
+                        <h6>Initial Assessment Completed</h6>
+                        <p class="text-secondary small">Comprehensive evaluation of baseline skills.</p>
+                        <span class="badge bg-accent-soft text-accent">Feb 15, 2024</span>
+                    </div>
+                    <div class="milestone-item completed">
+                        <div class="milestone-dot"></div>
+                        <h6>Phonological Awareness</h6>
+                        <p class="text-secondary small">Success in identifying rhyming words and syllables.</p>
+                        <span class="badge bg-accent-soft text-accent">March 10, 2024</span>
+                    </div>
+                    <div class="milestone-item">
+                        <div class="milestone-dot"></div>
+                        <h6>Complex Sentence Production</h6>
+                        <p class="text-secondary small">Goal: Use of cohesive devices in storytelling.</p>
+                        <span class="badge bg-light text-muted">In Progress</span>
+                    </div>
+                    <div class="milestone-item">
+                        <div class="milestone-dot"></div>
+                        <h6>Therapy Graduation</h6>
+                        <p class="text-secondary small">Final review and maintenance plan.</p>
+                        <span class="badge bg-light text-muted">Upcoming</span>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 reveal" style="transition-delay: 0.2s;">
+                    <div class="premium-card">
+                        <h5 class="mb-4">Therapist Notes</h5>
+                        <div class="d-flex gap-3 mb-4">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71f1539bd1?auto=format&fit=crop&q=80&w=100" class="rounded-circle" width="50" height="50" alt="SLP">
+                            <div>
+                                <h6 class="mb-1">Sarah Collins, SLP</h6>
+                                <p class="mb-0 text-muted small">March 22, 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary italic">"Leo is showing great enthusiasm during our 'Story Dice' game. His production of 's' clusters has improved significantly this week. I recommend continuing the 'Silent E' matching game at home."</p>
+                        <hr>
+                        <a href="dashboard.html" class="btn btn-primary w-100">Download Detailed Report</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-4 fs-3" href="index.html">
+                        <img src="assets/images/logo.svg" alt="Kinder Logo" height="40">
+                    </a>
+                    <p class="text-secondary pe-lg-5">Providing a supportive, playful, and effective environment for
+                        children to overcome speech and language challenges.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none text-secondary">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-decoration-none text-secondary">Services</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="mb-4">Therapy</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Speech Delay</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Articulation</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Stuttering</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Social Skills</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p class="text-secondary mb-4">Get expert tips and activities for your child's development.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control rounded-start-3" placeholder="Email address">
+                        <button class="btn btn-primary px-4" type="button">Join</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 border-color">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="mb-0 text-secondary small">&copy; 2026 Kinder Private Practice. All rights reserved.</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-primary btn-sm rounded-pill"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        <i class="bi bi-arrow-up me-2"></i> Back to Top
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

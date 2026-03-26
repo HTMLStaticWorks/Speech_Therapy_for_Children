@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Kinder Speech Therapy Portal</title>
+    <meta name="description" content="Secure login to your Kinderly speech therapy account. Access your child's progress tracking, session schedule, and therapy resources.">
+    <meta name="keywords" content="login, portal, therapy account, patient login">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" id="rtlStyle" href="assets/css/rtl.css" disabled>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            overflow: hidden;
+        }
+
+        .login-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 32px;
+            width: 100%;
+            max-width: 450px;
+            padding: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: glassReveal 1s ease-out;
+        }
+
+        [data-bs-theme="dark"] .login-glass {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes glassReveal {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+                filter: blur(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                filter: blur(0);
+            }
+        }
+
+        .d-none-dark {
+            display: inline-block;
+        }
+
+        .d-inline-dark {
+            display: none;
+        }
+
+        [data-bs-theme="dark"] .d-none-dark {
+            display: none;
+        }
+
+        [data-bs-theme="dark"] .d-inline-dark {
+            display: inline-block;
+        }
+
+        [data-bs-theme="dark"] .bg-white {
+            background-color: var(--bs-body-bg) !important;
+        }
+
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color) !important;
+            border-color: var(--secondary-color) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 184, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-glass">
+        <!-- Toggles Above Logo -->
+        <div class="d-flex justify-content-end gap-2 mb-3">
+            <button class="btn btn-sm btn-light rounded-circle theme-toggle" id="themeToggle" title="Toggle Theme">
+                <i class="bi bi-sun d-none-dark"></i>
+                <i class="bi bi-moon d-inline-dark"></i>
+            </button>
+            <button class="btn btn-sm btn-light rounded-circle" id="rtlToggle" title="Toggle RTL">
+                <i class="bi bi-translate"></i>
+            </button>
+        </div>
+
+        <div class="text-center mb-4">
+            <a href="index.html" class="navbar-brand justify-content-center mb-3">
+                <img src="assets/images/logo.svg" alt="Kinderly Logo" height="45">
+            </a>
+            <h3 class="fw-bold mb-1">Welcome Back</h3>
+
+        </div>
+
+        <form>
+            <div class="mb-3">
+                <label class="form-label small fw-bold text-dark-emphasis">Email Address</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0 rounded-start-3"><i
+                            class="bi bi-envelope text-muted"></i></span>
+                    <input type="email" class="form-control border-start-0 py-2 shadow-none rounded-end-3 bg-light"
+                        placeholder="name@email.com">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label small fw-bold text-dark-emphasis">Password</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0 rounded-start-3"><i
+                            class="bi bi-lock text-muted"></i></span>
+                    <input type="password" class="form-control border-start-0 py-2 shadow-none rounded-end-3 bg-light"
+                        placeholder="••••••••">
+                </div>
+            </div>
+
+            <!-- Remember & Forgot in One Line -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="form-check mb-0">
+                    <input class="form-check-input" type="checkbox" id="remember">
+                    <label class="form-check-label small" for="remember">Remember me</label>
+                </div>
+                <a href="#" class="text-primary small text-decoration-none fw-medium">Forgot password?</a>
+            </div>
+
+            <a href="dashboard.html" class="btn btn-primary w-100 py-2 fs-6 rounded-3 shadow-sm mb-4">Login to
+                Account</a>
+
+            <div class="position-relative mb-4">
+                <hr class="text-secondary opacity-25">
+                <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 small text-secondary">or
+                    connect with</span>
+            </div>
+
+            <!-- Social Login One Line -->
+            <div class="d-flex gap-2 mb-4">
+                <button
+                    class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center gap-2 small rounded-3">
+                    <img src="https://www.google.com/favicon.ico" height="16" alt="Google"> Google
+                </button>
+                <button
+                    class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center gap-2 small rounded-3">
+                    <i class="bi bi-facebook text-primary"></i> Facebook
+                </button>
+            </div>
+
+            <p class="text-center small text-secondary mb-0">
+                Don't have an account? <a href="register.html"
+                    class="text-primary fw-bold text-decoration-none">Register</a>
+            </p>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Simple theme apply based on localStorage for 100vh pages -->
+    <script>
+        // Theme Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const storedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-bs-theme', storedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // RTL Logic
+        const rtlToggle = document.getElementById('rtlToggle');
+        const rtlStyle = document.getElementById('rtlStyle');
+        let isRTL = localStorage.getItem('rtl') === 'true';
+
+        function updateRTL(enabled) {
+            document.documentElement.dir = enabled ? 'rtl' : 'ltr';
+            rtlStyle.disabled = !enabled;
+            localStorage.setItem('rtl', enabled);
+        }
+        updateRTL(isRTL);
+
+        rtlToggle.addEventListener('click', () => {
+            isRTL = !isRTL;
+            updateRTL(isRTL);
+        });
+    </script>
+</body>
+
+</html>

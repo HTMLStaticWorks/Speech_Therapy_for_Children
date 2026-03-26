@@ -1,0 +1,85 @@
+
+/* --- Playful Theme Additions --- */
+.hero-playful {
+    background: linear-gradient(135deg, #fef4f6 0%, #fff8e1 100%);
+    position: relative;
+    padding-top: 160px !important;
+    padding-bottom: 120px !important;
+}
+
+.text-playful {
+    font-family: 'Comic Sans MS', 'Fredoka One', 'Varela Round', 'Baloo 2', cursive, sans-serif;
+    letter-spacing: -1px;
+}
+
+.fw-black {
+    font-weight: 900;
+}
+
+.text-c1 { color: #FF577B; }
+.text-c2 { color: #FF8A00; }
+.text-c3 { color: #FFB800; }
+.text-c4 { color: #ffb800; }
+.text-c5 { color: #FF577B; }
+.text-c6 { color: #9D4EDD; }
+
+.floating-shape {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.shape-1 { left: 5%; top: 15%; animation: floatY 6s ease-in-out infinite; fill: #FFB800; }
+.shape-2 { right: 8%; top: 25%; animation: floatX 8s ease-in-out infinite; fill: #ffb800; }
+.shape-3 { left: 45%; bottom: 10%; animation: floatY 7s ease-in-out infinite reverse; fill: #FF577B; }
+.shape-4 { right: 40%; top: 8%; animation: pulseSize 5s ease-in-out infinite; fill: #9D4EDD; }
+.shape-5 { left: 15%; bottom: 20%; animation: floatX 9s ease-in-out infinite reverse; fill: #FF577B; }
+
+@keyframes floatY {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(15deg); }
+}
+
+@keyframes floatX {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(30px) rotate(-15deg); }
+}
+
+@keyframes pulseSize {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.btn-playful {
+    border-radius: 50px !important;
+    padding: 14px 34px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.btn-playful:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.image-blob-mask {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morphBlob 8s ease-in-out infinite;
+    overflow: hidden;
+    position: relative;
+    border: 10px solid #fff;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+}
+
+@keyframes morphBlob {
+    0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}

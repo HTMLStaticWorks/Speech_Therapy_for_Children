@@ -1,0 +1,23 @@
+# Robots.txt for Kinderly Speech Therapy
+# Allow search engine crawlers to index public pages
+User-agent: *
+Allow: /
+Disallow: /dashboard.html
+Disallow: /login.html
+Disallow: /register.html
+Disallow: /assets/
+
+# Specific rules for Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+
+# Point to sitemap
+Sitemap: https://www.kinder.com/sitemap.xml
+
+# Crawl delay to prevent server overload
+Crawl-delay: 1
+Request-rate: 1/1s

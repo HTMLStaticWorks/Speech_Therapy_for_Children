@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinder - Kids Speech Therapy & Education | Ages 2-12</title>
+    <meta name="description"
+        content="Personalized speech therapy for children ages 2-12. Track progress, book sessions, and access at-home activities. Expert certified speech-language pathologists in a supportive private practice.">
+    <meta name="keywords"
+        content="speech therapy, kids, children, speech-language pathology, language therapy, articulation, pediatric therapy">
+    <meta name="author" content="Kinderly Speech Therapy">
+    <meta property="og:title" content="Kinder - Kids Speech Therapy & Education">
+    <meta property="og:description"
+        content="Personalized speech therapy for children ages 2-12. Expert certified therapists helping children find their voice through play-based learning.">
+    <meta property="og:type" content="business.business">
+    <meta property="og:image" content="assets/images/hero_1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kinder - Kids Speech Therapy">
+    <meta name="twitter:description"
+        content="Expert speech therapy for children ages 2-12. Book a free consultation today.">
+    <meta name="twitter:image" content="assets/images/hero_1.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" id="rtlStyle" href="assets/css/rtl.css" disabled>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Kinder Speech Therapy",
+        "description": "Professional speech therapy services for children ages 2-12",
+        "url": "https://www.kinder.com",
+        "telephone": "",
+        "email": "contact@kinderly.com",
+        "image": "assets/images/logo.svg",
+        "priceRange": "$$",
+        "areaServed": "Local",
+        "serviceType": "Speech Therapy",
+        "knowsAbout": ["Speech-Language Pathology", "Pediatric Therapy", "Communication Disorders", "Language Development"],
+        "sameAs": [
+            "https://www.facebook.com/kinderlytherapy",
+            "https://www.instagram.com/kinderlytherapy"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Kinder Speech Therapy",
+        "logo": "assets/images/logo.svg",
+        "description": "Expert pediatric speech therapy helping children ages 2-12 develop confident communication skills",
+        "url": "https://www.kinder.com",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "email": "contact@kinderly.com"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Decorative Background Shapes -->
+    <div class="decorative-bg">
+        <svg class="deco-shape float-slow" width="120" height="120" viewBox="0 0 24 24"
+            style="top: 10%; left: -2%; color: var(--primary-color);">
+            <path fill="currentColor"
+                d="M12 1L14.39 8.26H22L15.81 12.75L18.19 20L12 15.5L5.81 20L8.19 12.75L2 8.26H9.61L12 1Z" />
+        </svg>
+        <svg class="deco-shape float-slow-reverse" width="80" height="80" viewBox="0 0 24 24"
+            style="top: 40%; right: -1%; color: var(--secondary-color);">
+            <path fill="currentColor"
+                d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.41 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.59 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z" />
+        </svg>
+        <svg class="deco-shape float-slow" width="150" height="150" viewBox="0 0 24 24"
+            style="bottom: 5%; left: 5%; color: var(--accent-color);">
+            <path fill="currentColor"
+                d="M17.5 19C15.01 19 13 16.99 13 14.5C13 14.36 13.01 14.23 13.03 14.1C12.7 14.04 12.35 14 12 14C9.24 14 7 11.76 7 9C7 6.24 9.24 4 12 4C14.31 4 16.25 5.56 16.8 7.69C17.03 7.62 17.26 7.59 17.5 7.59C19.43 7.59 21 9.16 21 11.09C21 11.85 20.76 12.55 20.35 13.13C20.75 13.75 21 14.47 21 15.25C21 17.32 19.43 19 17.5 19Z" />
+        </svg>
+        <svg class="deco-shape float-slow-reverse" width="60" height="60" viewBox="0 0 24 24"
+            style="top: 20%; right: 15%; color: var(--primary-color);">
+            <circle cx="12" cy="12" r="10" fill="currentColor" />
+        </svg>
+    </div>
+
+    <nav class="navbar navbar-expand-lg fixed-top border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.svg" alt="Kinder Logo" height="40">
+            </a>
+
+            <div class="d-flex align-items-center gap-3 d-lg-none">
+                <button class="theme-toggle" id="themeToggleMobile">
+                    <i class="bi bi-moon-stars"></i>
+                </button>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button"
+                            data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1 (Classic)</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Home 2 (Modern)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle d-none d-lg-block" id="themeToggle" title="Toggle Theme">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button
+                        class="btn btn-outline-primary btn-sm rounded-circle d-none d-lg-flex align-items-center justify-content-center"
+                        id="rtlToggle" style="width: 35px; height: 35px;" title="Toggle RTL">
+                        <i class="bi bi-translate"></i>
+                    </button>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                            data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle fs-5"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="dashboard.html?role=admin">Admin View</a></li>
+                            <li><a class="dropdown-item" href="dashboard.html?role=parent">Parents View</a></li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary px-4 d-none d-lg-block">Book Now</a>
+                    <a href="register.html" class="btn btn-outline-primary px-4 d-none d-lg-block">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (Offcanvas) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold color-primary">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav gap-3">
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <hr>
+                <li class="nav-item">
+                    <button class="btn btn-outline-primary w-100 mb-3" id="rtlToggleMobile">
+                        <i class="bi bi-translate me-2"></i> RTL Mode
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="dashboard.html?role=admin">Admin Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="dashboard.html?role=parent">Parents Dashboard</a>
+                </li>
+                <li class="nav-item d-grid gap-2">
+                    <a class="btn btn-primary" href="contact.html">Book Now</a>
+                    <a class="btn btn-outline-primary" href="register.html">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-carousel position-relative overflow-hidden">
+        <div id="heroSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <!-- Slide 1: Speech Therapy -->
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <span
+                                    class="badge rounded-pill bg-secondary-soft text-secondary mb-3 px-3 py-2 fw-bold">
+                                    <i class="bi bi-heart-fill me-2"></i> Trusted by 500+ Parents
+                                </span>
+                                <h1 class="display-3 fw-bold mb-4">
+                                    Helping Your Child <br>
+                                    <span class="highlight-circle">Find Their Voice</span>
+                                </h1>
+                                <p class="lead text-secondary-600 mb-5 fs-4">
+                                    Personalized speech therapy for children ages 2–12. We focus on growth, confidence,
+                                    and clear communication.
+                                </p>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a href="contact.html"
+                                        class="btn btn-primary btn-lg shadow-md px-4 py-3 rounded-pill">Book Free
+                                        Consultation</a>
+                                    <a href="about.html"
+                                        class="btn btn-outline-secondary btn-lg border-2 px-4 py-3 rounded-pill">Meet
+                                        Our Team</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="hero-image-mask mx-auto shadow-lg">
+                                    <img src="assets/images/hero_1.png"
+                                        alt="Child attending personalized speech therapy session at Kinderly clinic"
+                                        class="img-fluid w-100 h-100 object-fit-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Sensory Play -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <span
+                                    class="badge rounded-pill bg-secondary-soft text-secondary mb-3 px-3 py-2 fw-bold">
+                                    <i class="bi bi-controller me-2"></i> Learning Through Play
+                                </span>
+                                <h2 class="display-3 fw-bold mb-4">
+                                    Unlock Their <br>
+                                    <span class="highlight-circle">Full Potential</span>
+                                </h2>
+                                <p class="lead text-secondary-600 mb-5 fs-4">
+                                    Our therapists use evidence-based sensory play to make learning fun, engaging, and
+                                    highly effective for every child.
+                                </p>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a href="services.html"
+                                        class="btn btn-primary btn-lg shadow-md px-4 py-3 rounded-pill">Our Services</a>
+                                    <a href="progress.html"
+                                        class="btn btn-outline-secondary btn-lg border-2 px-4 py-3 rounded-pill">Track
+                                        Progress</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="hero-image-mask mx-auto shadow-lg">
+                                    <img src="assets/images/hero_2.png"
+                                        alt="Interactive sensory play-based learning activities for speech development"
+                                        class="img-fluid w-100 h-100 object-fit-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Community/Support -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <span
+                                    class="badge rounded-pill bg-secondary-soft text-secondary mb-3 px-3 py-2 fw-bold">
+                                    <i class="bi bi-people-fill me-2"></i> Supportive Community
+                                </span>
+                                <h2 class="display-3 fw-bold mb-4">
+                                    Join a Family of <br>
+                                    <span class="highlight-circle">Empowered Kids</span>
+                                </h2>
+                                <p class="lead text-secondary-600 mb-5 fs-4">
+                                    We don't just treat children; we empower families with tools and resources to
+                                    support growth at home.
+                                </p>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a href="register.html"
+                                        class="btn btn-primary btn-lg shadow-md px-4 py-3 rounded-pill">Join Now</a>
+                                    <a href="resources.html"
+                                        class="btn btn-outline-secondary btn-lg border-2 px-4 py-3 rounded-pill">Free
+                                        Resources</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="hero-image-mask mx-auto shadow-lg">
+                                    <img src="assets/images/hero_3.png"
+                                        alt="Child and therapist learning together in supportive communication environment"
+                                        class="img-fluid w-100 h-100 object-fit-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Decorative Elements -->
+            <!-- Sun -->
+            <div class="floating-element icon-sun d-none d-lg-block">
+                <svg viewBox="0 0 100 100" class="w-100">
+                    <circle cx="50" cy="50" r="20" fill="var(--accent-color)" />
+                    <g stroke="var(--accent-color)" stroke-width="6" stroke-linecap="round">
+                        <line x1="50" y1="10" x2="50" y2="25" />
+                        <line x1="50" y1="75" x2="50" y2="90" />
+                        <line x1="10" y1="50" x2="25" y2="50" />
+                        <line x1="75" y1="50" x2="90" y2="50" />
+                        <line x1="21.7" y1="21.7" x2="32.3" y2="32.3" />
+                        <line x1="67.7" y1="67.7" x2="78.3" y2="78.3" />
+                        <line x1="21.7" y1="78.3" x2="32.3" y2="67.7" />
+                        <line x1="67.7" y1="32.3" x2="78.3" y2="21.7" />
+                    </g>
+                </svg>
+            </div>
+            <!-- Blocks -->
+            <div class="floating-element icon-blocks d-none d-lg-block">
+                <svg viewBox="0 0 100 100" class="w-100">
+                    <rect x="10" y="40" width="30" height="30" rx="4" fill="var(--primary-color)" />
+                    <rect x="45" y="40" width="30" height="30" rx="4" fill="var(--secondary-color)" />
+                    <rect x="27.5" y="10" width="30" height="30" rx="4" fill="var(--accent-color)" />
+                </svg>
+            </div>
+            <!-- Stars -->
+            <div class="floating-element icon-stars d-none d-lg-block">
+                <i class="bi bi-stars fs-1" style="color: var(--secondary-color)"></i>
+            </div>
+            <!-- Cloud -->
+            <div class="floating-element icon-clouds d-none d-lg-block">
+                <svg viewBox="0 0 24 24" fill="var(--pastel-blue)" class="w-100">
+                    <path
+                        d="M17.5,19c-3.037,0-5.5-2.463-5.5-5.5c0-0.038,0.001-0.076,0.002-0.114C11.53,13.197,11.02,13,10.5,13 c-2.485,0-4.5,2.015-4.5,4.5S8.015,22,10.5,22h7c1.933,0,3.5-1.567,3.5-3.5S19.433,15,17.5,15c-0.106,0-0.21,0.007-0.312,0.02 C17.114,15.008,17.058,15,17,15C17,11.686,14.314,9,11,9c-3.134,0-5.697,2.405-5.97,5.474C3.805,14.838,3,16.072,3,17.5 C3,19.433,4.567,21,6.5,21" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Wavy Divider -->
+        <div class="hero-wavy-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <!-- Toddlers Card -->
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="feature-card card-accent text-center">
+                        <div class="card-badge">01</div>
+                        <h3>Early Intervention</h3>
+                        <p>Supporting toddlers (ages 2-5) with foundational communication and speech milestones through
+                            playful exploration.</p>
+                        <div class="feature-image-container">
+                            <img src="assets/images/card_toddler.png"
+                                alt="Early intervention speech therapy for toddlers ages 2-5 at Kinder">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- School-Aged Card -->
+                <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.1s;">
+                    <div class="feature-card card-accent text-center">
+                        <div class="card-badge">02</div>
+                        <h3>School-Aged Success</h3>
+                        <p>Empowering kids (ages 6-12) to excel in social and academic environments with clear
+                            communication and confidence.</p>
+                        <div class="feature-image-container">
+                            <img src="assets/images/card_school.png"
+                                alt="Speech therapy for school-aged children ages 6-12 developing communication skills">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parent Support Card -->
+                <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.2s;">
+                    <div class="feature-card card-accent text-center">
+                        <div class="card-badge">03</div>
+                        <h3>Parent Guidance</h3>
+                        <p class="text-secondary">Providing families with the tools and expert guidance needed to
+                            continue progress through home-based activities.</p>
+                        <div class="feature-image-container">
+                            <img src="assets/images/card_parent.png"
+                                alt="Parent guidance and at-home speech therapy activities for family support">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Milestones Showcase Redesign -->
+    <section class="milestone-section reveal">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="badge bg-primary-soft text-primary mb-3 px-3 py-2">Our Advantage</span>
+                    <h2 class="display-5 fw-bold mb-4">Celebrating Every <span class="text-gradient">Milestone</span>
+                    </h2>
+                    <p class="lead text-secondary mb-5">We believe in celebrating every small victory. Our progress
+                        tracking system helps parents stay involved and celebrate their child's unique journey through
+                        personalized care.</p>
+
+                    <!-- Milestone Cards Grid -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-sm-6">
+                            <div
+                                class="milestone-card p-4 rounded-4 bg-primary-soft border border-primary-subtle h-100">
+                                <i class="bi bi-calendar-check text-primary fs-3 mb-2 d-block"></i>
+                                <h5 class="fw-bold mb-2">Practice Plans</h5>
+                                <p class="small text-secondary mb-0">Customized weekly goals tailored to your child's
+                                    needs.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div
+                                class="milestone-card p-4 rounded-4 bg-secondary-soft border border-secondary-subtle h-100">
+                                <i class="bi bi-graph-up text-secondary fs-3 mb-2 d-block"></i>
+                                <h5 class="fw-bold mb-2">Progress Reports</h5>
+                                <p class="small text-secondary mb-0">Detailed weekly insights and measurable
+                                    achievements.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="milestone-card p-4 rounded-4 bg-accent-soft border border-accent-subtle h-100">
+                                <i class="bi bi-stars text-accent fs-3 mb-2 d-block"></i>
+                                <h5 class="fw-bold mb-2">Learning Tools</h5>
+                                <p class="small text-secondary mb-0">Interactive voice-enabled therapy tools for home
+                                    use.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="milestone-card p-4 rounded-4 bg-info-soft border border-info-subtle h-100">
+                                <i class="bi bi-people text-info fs-3 mb-2 d-block"></i>
+                                <h5 class="fw-bold mb-2">Parent Support</h5>
+                                <p class="small text-secondary mb-0">Direct access to specialists for ongoing guidance.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="dashboard.html" class="btn btn-primary px-4 py-3 rounded-pill">Explore Dashboard</a>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="collage-container position-relative">
+                        <div class="row g-3">
+                            <div class="col-12" style="padding-left: 50px;">
+                                <div class="arch-top overflow-hidden shadow-lg border border-5 border-white bg-white">
+                                    <img src="https://images.unsplash.com/photo-1503454537688-e47a0d565f87?auto=format&fit=crop&q=80&w=800&h=600"
+                                        alt="Child in speech therapy" class="img-fluid w-100 object-fit-cover"
+                                        style="height: 400px;">
+                                </div>
+                            </div>
+                            <div class="col-8 mt-n5 position-relative z-index-1">
+                                <div
+                                    class="arch-bottom overflow-hidden shadow-lg border border-5 border-white bg-white">
+                                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=600&h=450"
+                                        alt="Parent and child" class="img-fluid w-100 object-fit-cover"
+                                        style="height: 300px;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating element -->
+                        <div class="floating-element bottom-0 end-0 translate-middle mb-4 me-4 d-none d-md-block">
+                            <div class="bg-primary text-white p-3 rounded-4 shadow-lg text-center"
+                                style="width: 120px;">
+                                <div class="h3 fw-bold mb-0">98%</div>
+                                <div class="small">Success Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section reveal">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <span class="badge bg-primary-soft text-primary mb-3 px-3 py-2">Expert Team</span>
+                    <h2 class="display-5 mb-3">Meet Our Specialists</h2>
+                    <p class="lead text-secondary">Dedicated professionals with a passion for helping children thrive.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="team-card h-100">
+                        <img src="assets/images/team_1.png"
+                            alt="Sarah Johnson, Senior Speech Therapist with 12+ years experience"
+                            class="team-img shadow-sm">
+                        <h4>Sarah Johnson</h4>
+                        <p class="text-primary fw-bold">Senior Speech Therapist</p>
+                        <p class="text-secondary small">12+ years of experience in early intervention and autism
+                            support.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card h-100">
+                        <img src="assets/images/team_2.png"
+                            alt="Dr. Michael Chen, Pediatric Speech Specialist expert in articulation disorders"
+                            class="team-img shadow-sm" style="border-color: var(--secondary-color);">
+                        <h4>Dr. Michael Chen</h4>
+                        <p class="text-secondary fw-bold" style="color: var(--secondary-color) !important;">Pediatric
+                            Specialist</p>
+                        <p class="text-secondary small">Expert in articulation disorders and school-aged communication.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card h-100">
+                        <img src="assets/images/team_3.png"
+                            alt="Elena Rodriguez, Speech Therapist specializing in childhood language disorders"
+                            class="team-img shadow-sm" style="border-color: var(--accent-color);">
+                        <h4>Elena Rodriguez</h4>
+                        <p class="text-accent fw-bold">Clinical Director</p>
+                        <p class="text-secondary small">Passionate about parent-led therapy and holistic child
+                            development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section reveal">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <span class="badge bg-accent-soft text-accent mb-3 px-3 py-2">Flexible Plans</span>
+                    <h2 class="display-5 mb-3">Therapy Packages</h2>
+                    <p class="lead text-secondary">Choose the right path for your child's success.</p>
+                </div>
+            </div>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-4">
+                    <div class="pricing-card d-flex flex-column">
+                        <div>
+                            <h5>Starter</h5>
+                            <div class="pricing-price my-3">$99<span
+                                    class="fs-6 text-secondary fw-normal">/session</span></div>
+                            <ul class="pricing-features list-unstyled mb-4">
+                                <li><i class="bi bi-check2 text-primary me-2"></i> Weekly 45min Session</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i> Monthly Progress Tracker</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i> Online Resource Access</li>
+                            </ul>
+                        </div>
+                        <a href="register.html" class="btn btn-outline-primary w-100 rounded-pill mt-auto">Get
+                            Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing-card featured d-flex flex-column">
+                        <div
+                            class="badge bg-primary text-white position-absolute top-0 start-50 translate-middle-x mt-n2 px-3">
+                            Most Popular</div>
+                        <div>
+                            <h5>Growth</h5>
+                            <div class="pricing-price my-3">$179<span class="fs-6 text-secondary fw-normal">/2
+                                    sessions</span></div>
+                            <ul class="pricing-features list-unstyled mb-4">
+                                <li><i class="bi bi-check2 text-primary me-2"></i> Bi-Weekly Sessions</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i> Personalized Home Plan</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i> Priority Support</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i> Video Milestone Reviews</li>
+                            </ul>
+                        </div>
+                        <a href="register.html" class="btn btn-primary w-100 rounded-pill shadow-sm mt-auto">Start
+                            Growth Path</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing-card d-flex flex-column">
+                        <div>
+                            <h5>Premium</h5>
+                            <div class="pricing-price my-3">$299<span
+                                    class="fs-6 text-secondary fw-normal">/month</span></div>
+                            <ul class="pricing-features list-unstyled mb-4">
+                                <li><i class="bi bi-check2 text-primary me-2"></i> Weekly 60min Sessions</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i> Daily Home Exercises</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i> 24/7 Parent Helpline</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i> Clinical Director Review</li>
+                            </ul>
+                        </div>
+                        <a href="register.html" class="btn btn-outline-primary w-100 rounded-pill mt-auto">Maximize
+                            Potential</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-4 fs-3" href="index.html">
+                        <img src="assets/images/logo.svg" alt="Kinder Logo" height="40">
+                    </a>
+                    <p class="text-secondary pe-lg-5">Providing a supportive, playful, and effective environment for
+                        children to overcome speech and language challenges.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none text-secondary">About Us</a>
+                        </li>
+                        <li class="mb-2"><a href="services.html"
+                                class="text-decoration-none text-secondary">Services</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-decoration-none text-secondary">Pricing</a>
+                        </li>
+                        <li class="mb-2"><a href="blog.html" class="text-decoration-none text-secondary">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="mb-4">Therapy</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Speech Delay</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Articulation</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Stuttering</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Social Skills</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p class="text-secondary mb-4">Get expert tips and activities for your child's development.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control rounded-start-3" placeholder="Email address">
+                        <button class="btn btn-primary px-4" type="button">Join</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 border-color">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="mb-0 text-secondary small">&copy; 2026 Kinder Private Practice. All rights reserved.</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-primary btn-sm rounded-pill"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        <i class="bi bi-arrow-up me-2"></i> Back to Top
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Trigger counters on intersection
+        const counterSection = document.querySelector('.counter').closest('section');
+        const counterObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateCounters();
+                counterObserver.disconnect();
+            }
+        }, { threshold: 0.5 });
+        counterObserver.observe(counterSection);
+    </script>
+</body>
+
+</html>

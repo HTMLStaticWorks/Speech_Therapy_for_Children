@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Therapy Resources - At-Home Learning Activities</title>
+    <meta name="description" content="Free speech therapy resources and at-home activities for children. Download worksheets, watch educational videos, and access expert tips for supporting your child's speech development.">
+    <meta name="keywords" content="speech therapy resources, at-home activities, speech exercises, learning materials, therapy worksheets">
+    <meta name="author" content="Kinder Speech Therapy">
+    <meta property="og:title" content="Speech Therapy Resources">
+    <meta property="og:description" content="Free resources, worksheets, and activities to support your child's speech development at home.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/hero_1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Speech Therapy Resources">
+    <meta name="twitter:description" content="Free at-home activities and resources for speech development.">
+    <meta name="twitter:image" content="assets/images/hero_1.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationEvent",
+        "name": "Speech Therapy Resources and At-Home Activities",
+        "description": "Free resources, worksheets, and educational activities to support children's speech and language development",
+        "url": "https://www.kinderly.com/resources.html",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Kinder Speech Therapy"
+        }
+    }
+    </script>
+    <style>
+        .video-card {
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        .video-card:hover .video-overlay { background: rgba(0,0,0,0.2); }
+        .play-btn {
+            width: 80px; height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .video-card:hover .play-btn { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+    <!-- Decorative Background Shapes -->
+    <div class="decorative-bg">
+        <svg class="deco-shape float-slow" width="110" height="110" viewBox="0 0 24 24" style="top: 25%; left: -3%; color: var(--primary-color);">
+            <path fill="currentColor" d="M12 1L14.39 8.26H22L15.81 12.75L18.19 20L12 15.5L5.81 20L8.19 12.75L2 8.26H9.61L12 1Z"/>
+        </svg>
+        <svg class="deco-shape float-slow-reverse" width="90" height="90" viewBox="0 0 24 24" style="top: 10%; right: 10%; color: var(--secondary-color);">
+            <path fill="currentColor" d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.41 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.59 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z"/>
+        </svg>
+        <svg class="deco-shape float-slow" width="160" height="160" viewBox="0 0 24 24" style="bottom: 10%; right: -5%; color: var(--accent-color);">
+            <path fill="currentColor" d="M17.5 19C15.01 19 13 16.99 13 14.5C13 14.36 13.01 14.23 13.03 14.1C12.7 14.04 12.35 14 12 14C9.24 14 7 11.76 7 9C7 6.24 9.24 4 12 4C14.31 4 16.25 5.56 16.8 7.69C17.03 7.62 17.26 7.59 17.5 7.59C19.43 7.59 21 9.16 21 11.09C21 11.85 20.76 12.55 20.35 13.13C20.75 13.75 21 14.47 21 15.25C21 17.32 19.43 19 17.5 19Z"/>
+        </svg>
+    </div>
+
+    <!-- Header (Copy) -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.svg" alt="Kinderly Logo" height="40">
+            </a>
+
+            <div class="d-flex align-items-center gap-3 d-lg-none">
+                <button class="theme-toggle" id="themeToggleMobile">
+                    <i class="bi bi-moon-stars"></i>
+                </button>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1 (Classic)</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Home 2 (Modern)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle d-none d-lg-block" id="themeToggle" title="Toggle Theme">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm rounded-circle d-none d-lg-flex align-items-center justify-content-center" id="rtlToggle" style="width: 35px; height: 35px;" title="Toggle RTL">
+                        <i class="bi bi-translate"></i>
+                    </button>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle fs-5"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="dashboard.html?role=admin">Admin View</a></li>
+                            <li><a class="dropdown-item" href="dashboard.html?role=parent">Parents View</a></li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary px-4 d-none d-lg-block">Book Now</a>
+                    <a href="register.html" class="btn btn-outline-primary px-4 d-none d-lg-block">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold color-primary">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav gap-3">
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link active" href="resources.html">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <hr>
+                <li class="nav-item">
+                    <button class="btn btn-outline-primary w-100 mb-3" id="rtlToggleMobile">
+                        <i class="bi bi-translate me-2"></i> RTL Mode
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="dashboard.html?role=admin">Admin Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="dashboard.html?role=parent">Parents Dashboard</a>
+                </li>
+                <li class="nav-item d-grid gap-2">
+                    <a class="btn btn-primary" href="contact.html">Book Now</a>
+                    <a class="btn btn-outline-primary" href="register.html">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Resources Header -->
+    <section class="resources-hero mt-5 pt-5 text-center">
+        <div class="container">
+            <div class="reveal">
+                <h1 class="display-4 fw-bold mb-4">Empowering <span class="text-gradient">Parents</span></h1>
+                <p class="lead text-secondary mx-auto" style="max-width: 700px;">Explore our curated collection of free tools, guides, and activities to support your child's journey at home.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Parent Guides & Downloads -->
+    <section id="downloads" class="bg-light-soft">
+        <div class="container">
+            <div class="section-header text-center mb-5 reveal">
+                <h2 class="display-5 fw-bold mb-3">Free Downloads</h2>
+                <p class="text-secondary">Expert-crafted resources you can use today.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Guide 1 -->
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="premium-card p-0 overflow-hidden h-100 border-0 shadow-sm border-hover-primary">
+                        <div class="position-relative overflow-hidden" style="height: 200px;">
+                            <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80&w=600" class="w-100 h-100 object-fit-cover" alt="Milestones">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-primary rounded-pill">New</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex gap-2 mb-2">
+                                <span class="badge bg-light text-secondary border">PDF Guide</span>
+                                <span class="badge bg-light text-secondary border">2-5 Years</span>
+                            </div>
+                            <h4 class="fw-bold">Speech Milestones Checklist</h4>
+                            <p class="text-secondary small">A comprehensive guide of expected speech sounds and building blocks for toddlers.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill w-100 mt-2 py-2 fw-bold">
+                                <i class="bi bi-download me-2"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guide 2 -->
+                <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.1s;">
+                    <div class="premium-card p-0 overflow-hidden h-100 border-0 shadow-sm border-hover-secondary">
+                        <div class="position-relative overflow-hidden" style="height: 200px;">
+                            <img src="https://images.unsplash.com/photo-1484981138541-3d074aa97716?auto=format&fit=crop&q=80&w=600" class="w-100 h-100 object-fit-cover" alt="Games">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex gap-2 mb-2">
+                                <span class="badge bg-light text-secondary border">Activity Pack</span>
+                                <span class="badge bg-light text-secondary border">Parenting</span>
+                            </div>
+                            <h4 class="fw-bold">At-Home Language Games</h4>
+                            <p class="text-secondary small">5 simple and fun games to build vocabulary during dinner or daily routines.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill w-100 mt-2 py-2 fw-bold">
+                                <i class="bi bi-download me-2"></i> Download Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guide 3 -->
+                <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.2s;">
+                    <div class="premium-card p-0 overflow-hidden h-100 border-0 shadow-sm border-hover-accent">
+                        <div class="position-relative overflow-hidden" style="height: 200px;">
+                            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=600" class="w-100 h-100 object-fit-cover" alt="Journal">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex gap-2 mb-2">
+                                <span class="badge bg-light text-secondary border">Tracker</span>
+                                <span class="badge bg-light text-secondary border">All Ages</span>
+                            </div>
+                            <h4 class="fw-bold">Daily Progress Journal</h4>
+                            <p class="text-secondary small">Track small victories and consistency with our easy-to-use daily progress sheet.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill w-100 mt-2 py-2 fw-bold">
+                                <i class="bi bi-download me-2"></i> Download Journal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tutorials Section -->
+    <section id="videos">
+        <div class="container">
+            <div class="row align-items-end mb-5 reveal">
+                <div class="col-md-8">
+                    <span class="badge bg-secondary-soft text-secondary mb-2 px-3 py-2">Visual Learning</span>
+                    <h2 class="display-5 fw-bold">Video Tutorials</h2>
+                    <p class="text-secondary mb-0">Watch our lead specialists demonstrate effective home techniques.</p>
+                </div>
+                <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                    <a href="#" class="btn btn-outline-primary rounded-pill">View Channel <i class="bi bi-youtube ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8 reveal">
+                    <div class="video-card shadow-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1200" alt="Video Thumbnail" class="w-100 h-100 object-fit-cover">
+                        <div class="video-overlay">
+                            <div class="play-btn shadow-lg">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="badge bg-primary text-white">Featured</span>
+                            <span class="text-secondary small"><i class="bi bi-clock me-1"></i> 12 Mins</span>
+                        </div>
+                        <h3>Effective Praise: Building Confidence Through Play</h3>
+                        <p class="text-secondary lead">Learn how to provide positive reinforcement that encourages speech attempts without causing pressure or frustration for your child.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row g-4">
+                        <div class="col-12 reveal" style="transition-delay: 0.1s;">
+                            <div class="premium-card p-3 shadow-hover border-0 d-flex align-items-center gap-3 cursor-pointer">
+                                <div class="position-relative flex-shrink-0" style="width: 100px; height: 70px;">
+                                    <img src="https://images.unsplash.com/photo-1587653263995-422546a7256e?auto=format&fit=crop&q=80&w=100" class="rounded-3 w-100 h-100 object-fit-cover" alt="Thumb">
+                                    <div class="position-absolute top-50 start-50 translate-middle text-white"><i class="bi bi-play-circle-fill fs-4"></i></div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1 fw-bold">Daily Routines Guide</h6>
+                                    <p class="mb-0 text-muted small">8:45 mins</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 reveal" style="transition-delay: 0.2s;">
+                            <div class="premium-card p-3 shadow-hover border-0 d-flex align-items-center gap-3 cursor-pointer">
+                                <div class="position-relative flex-shrink-0" style="width: 100px; height: 70px;">
+                                    <img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&q=80&w=200" class="rounded-3 w-100 h-100 object-fit-cover" alt="Thumb">
+                                    <div class="position-absolute top-50 start-50 translate-middle text-white"><i class="bi bi-play-circle-fill fs-4"></i></div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1 fw-bold">Outdoor Play Tips</h6>
+                                    <p class="mb-0 text-muted small">5:12 mins</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 reveal" style="transition-delay: 0.3s;">
+                            <div class="premium-card p-3 shadow-hover border-0 d-flex align-items-center gap-3 cursor-pointer">
+                                <div class="position-relative flex-shrink-0" style="width: 100px; height: 70px;">
+                                    <img src="https://images.unsplash.com/photo-1603513492128-ba7bc9b3e143?auto=format&fit=crop&q=80&w=100" class="rounded-3 w-100 h-100 object-fit-cover" alt="Thumb">
+                                    <div class="position-absolute top-50 start-50 translate-middle text-white"><i class="bi bi-play-circle-fill fs-4"></i></div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1 fw-bold">Language Through Art</h6>
+                                    <p class="mb-0 text-muted small">10:20 mins</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-4 fs-3" href="index.html">
+                        <img src="assets/images/logo.svg" alt="Kinder Logo" height="40">
+                    </a>
+                    <p class="text-secondary pe-lg-5">Providing a supportive, playful, and effective environment for
+                        children to overcome speech and language challenges.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none text-secondary">About Us</a>
+                        </li>
+                        <li class="mb-2"><a href="services.html"
+                                class="text-decoration-none text-secondary">Services</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-decoration-none text-secondary">Pricing</a>
+                        </li>
+                        <li class="mb-2"><a href="blog.html" class="text-decoration-none text-secondary">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="mb-4">Therapy</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Speech Delay</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Articulation</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Stuttering</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Social Skills</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p class="text-secondary mb-4">Get expert tips and activities for your child's development.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control rounded-start-3" placeholder="Email address">
+                        <button class="btn btn-primary px-4" type="button">Join</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 border-color">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="mb-0 text-secondary small">&copy; 2026 Kinder Private Practice. All rights reserved.</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-primary btn-sm rounded-pill"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        <i class="bi bi-arrow-up me-2"></i> Back to Top
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

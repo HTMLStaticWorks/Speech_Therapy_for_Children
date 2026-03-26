@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Join Kinder Speech Therapy</title>
+    <meta name="description" content="Create your account with Kinderly Speech Therapy. Sign up today to access therapy sessions, track progress, and connect with our expert speech therapists.">
+    <meta name="keywords" content="register, sign up, therapy account, parent account, join">
+    <meta name="author" content="Kinder Speech Therapy">
+    <meta property="og:title" content="Join Kinder Speech Therapy">
+    <meta property="og:description" content="Sign up today and start your child's speech therapy journey.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Register with Kinder">
+    <meta name="twitter:description" content="Join thousands of families at Kinderly Speech Therapy.">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" id="rtlStyle" href="assets/css/rtl.css" disabled>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-color);
+            padding: 40px 0;
+        }
+
+        .register-container {
+            width: 100%;
+            max-width: 500px;
+            animation: slideUpReg 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUpReg {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .d-none-dark {
+            display: inline-block;
+        }
+
+        .d-inline-dark {
+            display: none;
+        }
+
+        [data-bs-theme="dark"] .d-none-dark {
+            display: none;
+        }
+
+        [data-bs-theme="dark"] .d-inline-dark {
+            display: inline-block;
+        }
+
+        [data-bs-theme="dark"] .bg-white {
+            background-color: var(--bs-body-bg) !important;
+        }
+
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color) !important;
+            border-color: var(--secondary-color) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 184, 0, 0.3);
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            min-height: 100vh;
+            padding: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="register-container px-4">
+        <div class="premium-card p-4 p-md-5 shadow-lg border-0"
+            style="border-radius: 32px; background: rgba(var(--bs-body-bg-rgb), 0.8); backdrop-filter: blur(20px);">
+            <!-- Toggles Above Logo -->
+            <div class="d-flex justify-content-end gap-2 mb-3">
+                <button class="btn btn-sm btn-light rounded-circle theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <i class="bi bi-sun d-none-dark"></i>
+                    <i class="bi bi-moon d-inline-dark"></i>
+                </button>
+                <button class="btn btn-sm btn-light rounded-circle" id="rtlToggle" title="Toggle RTL">
+                    <i class="bi bi-translate"></i>
+                </button>
+            </div>
+
+            <div class="text-center mb-4">
+                <a href="index.html" class="navbar-brand justify-content-center mb-3">
+                    <img src="assets/images/logo.svg" alt="Kinderly Logo" height="45">
+                </a>
+                <h3 class="fw-bold mb-1">Create Account</h3>
+
+            </div>
+
+            <form>
+                <div class="row g-3">
+                    <div class="col-12 text-start">
+                        <label class="form-label small fw-bold text-dark-emphasis text-start">Full Name</label>
+                        <input type="text" class="form-control py-2 shadow-none bg-light border-0"
+                            placeholder="First Name">
+                    </div>
+                    <div class="col-12 text-start">
+                        <label class="form-label small fw-bold text-dark-emphasis text-start">Child's Name</label>
+                        <input type="text" class="form-control py-2 shadow-none bg-light border-0"
+                            placeholder="Child's Name">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label small fw-bold text-dark-emphasis">Email Address</label>
+                        <input type="email" class="form-control py-2 shadow-none bg-light border-0"
+                            placeholder="name@email.com">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label small fw-bold text-dark-emphasis">Password</label>
+                        <input type="password" class="form-control py-2 shadow-none bg-light border-0"
+                            placeholder="••••••••">
+                    </div>
+                </div>
+
+                <div class="mt-4 mb-4">
+                    <div class="form-check small">
+                        <input class="form-check-input" type="checkbox" id="terms" checked>
+                        <label class="form-check-label text-secondary" for="terms">
+                            I agree to the <a href="#" class="text-primary text-decoration-none fw-medium">Terms</a> and
+                            <a href="#" class="text-primary text-decoration-none fw-medium">Privacy</a>.
+                        </label>
+                    </div>
+                </div>
+
+                <a href="dashboard.html" class="btn btn-primary w-100 py-2 fs-6 rounded-3 shadow-sm mb-4">Create
+                    Account</a>
+
+                <div class="position-relative mb-4">
+                    <hr class="text-secondary opacity-25">
+                    <span
+                        class="position-absolute top-50 start-50 translate-middle bg-white px-3 small text-secondary">or
+                        connect with</span>
+                </div>
+
+                <!-- Social Login One Line -->
+                <div class="d-flex gap-2 mb-4">
+                    <button
+                        class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center gap-2 small rounded-3">
+                        <img src="https://www.google.com/favicon.ico" height="16" alt="Google"> Google
+                    </button>
+                    <button
+                        class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center gap-2 small rounded-3">
+                        <i class="bi bi-facebook text-primary"></i> Facebook
+                    </button>
+                </div>
+
+                <p class="text-center small text-secondary mt-4 mb-0">
+                    Already have an account? <a href="login.html"
+                        class="text-primary fw-bold text-decoration-none">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Theme Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const storedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-bs-theme', storedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // RTL Logic
+        const rtlToggle = document.getElementById('rtlToggle');
+        const rtlStyle = document.getElementById('rtlStyle');
+        let isRTL = localStorage.getItem('rtl') === 'true';
+
+        function updateRTL(enabled) {
+            document.documentElement.dir = enabled ? 'rtl' : 'ltr';
+            rtlStyle.disabled = !enabled;
+            localStorage.setItem('rtl', enabled);
+        }
+        updateRTL(isRTL);
+
+        rtlToggle.addEventListener('click', () => {
+            isRTL = !isRTL;
+            updateRTL(isRTL);
+        });
+    </script>
+</body>
+
+</html>
