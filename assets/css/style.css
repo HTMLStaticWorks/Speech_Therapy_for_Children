@@ -712,6 +712,9 @@ footer .btn.rounded-circle:hover {
 .pricing-card.featured {
     border: 2px solid var(--primary-color);
     transform: scale(1.05);
+    transform-origin: bottom center;
+    position: relative;
+    z-index: 1;
 }
 
 .pricing-price {
@@ -739,6 +742,13 @@ footer .btn.rounded-circle:hover {
     background-repeat: no-repeat;
     color: white;
     text-align: center;
+}
+
+.about-hero {
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../images/hero_child_therapy.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* --- Advanced Collage --- */
@@ -786,8 +796,102 @@ footer .btn.rounded-circle:hover {
     color: var(--secondary-color);
 }
 
+.bg-light-soft {
+    background-color: #fff8f1;
+}
+
+[data-bs-theme="dark"] .bg-light-soft {
+    background-color: #111827;
+}
+
 .bg-orange-soft {
     background-color: rgba(255, 184, 0, 0.1);
+}
+
+.about-philosophy-section {
+    background-color: #fff8f1;
+}
+
+.about-philosophy-card {
+    background: var(--card-bg);
+}
+
+.about-philosophy-card h4 {
+    color: var(--text-primary);
+}
+
+.icon-box.about-philosophy-icon {
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -44px !important;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+    overflow: hidden;
+}
+
+.icon-box.about-philosophy-icon i {
+    line-height: 1;
+}
+
+.about-philosophy-icon {
+    border: 6px solid #ffffff;
+}
+
+[data-bs-theme="dark"] .about-philosophy-section {
+    background-color: #111827;
+}
+
+[data-bs-theme="dark"] .about-philosophy-card {
+    background: #1f2937;
+    border-color: #334155;
+}
+
+[data-bs-theme="dark"] .about-philosophy-card p,
+[data-bs-theme="dark"] .about-philosophy-section .text-secondary {
+    color: #cbd5e1 !important;
+}
+
+[data-bs-theme="dark"] .about-philosophy-icon {
+    border-color: #1f2937;
+    box-shadow: 0 14px 30px rgba(2, 6, 23, 0.35);
+}
+
+.about-highlights-section {
+    background: linear-gradient(180deg, rgba(255, 248, 241, 0.65) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.about-highlight-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-highlight-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(255, 87, 123, 0.25);
+}
+
+.about-highlight-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+[data-bs-theme="dark"] .about-highlights-section {
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.55) 0%, rgba(15, 23, 42, 0) 100%);
 }
 
 /* --- About Us Section --- */
@@ -991,15 +1095,17 @@ footer .btn.rounded-circle:hover {
 
 /* --- Resources Hero --- */
 .resources-hero {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('../images/contact-form-bg.png');
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../images/contact-form-bg.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    padding: 120px 0 80px;
+    background-repeat: no-repeat;
 }
 
 [data-bs-theme="dark"] .resources-hero {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.92)), url('../images/contact-form-bg.png');
+    background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('../images/contact-form-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* --- Button Hover Style --- */
@@ -1012,28 +1118,56 @@ footer .btn.rounded-circle:hover {
 
 /* --- Services Page Header --- */
 .services-hero {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('../images/hero_child_therapy.png');
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../images/hero_child_therapy.png');
     background-size: cover;
     background-position: center;
-    padding: 160px 0 120px;
+    background-repeat: no-repeat;
 }
 
 [data-bs-theme="dark"] .services-hero {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('../images/hero_child_therapy.png');
+    background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('../images/hero_child_therapy.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-grid-section {
+    background: linear-gradient(180deg, rgba(255, 248, 241, 0.55) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.services-grid-intro {
+    max-width: 760px;
+}
+
+.services-programs-title {
+    color: #1a1a1a;
+}
+
+.services-programs-highlight {
+    background: linear-gradient(135deg, #ff6b57 0%, #ff9f1a 55%, #ffb800 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.services-learn-more,
+.services-learn-more:hover {
+    color: var(--primary-color) !important;
 }
 
 .service-card {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.35s ease;
     border: 1px solid var(--border-color);
     background: var(--card-bg);
     border-radius: 30px !important;
     overflow: hidden;
     position: relative;
+    box-shadow: var(--shadow-sm);
 }
 
 .service-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(74, 144, 226, 0.15), 0 0 30px rgba(255, 87, 123, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
     border-color: var(--primary-color);
 }
 
@@ -1052,7 +1186,7 @@ footer .btn.rounded-circle:hover {
 }
 
 .service-card:hover::after {
-    opacity: 0.1;
+    opacity: 0.06;
 }
 
 .service-card .transition-all {
@@ -1060,7 +1194,41 @@ footer .btn.rounded-circle:hover {
 }
 
 .service-card:hover .transition-all {
-    transform: scale(1.1);
+    transform: scale(1.06);
+}
+
+.service-card-media {
+    height: 220px;
+}
+
+.service-card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    padding-top: 0.75rem !important;
+}
+
+.services-icon {
+    width: 82px;
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -54px;
+    margin-bottom: 1.25rem;
+    border-radius: 24px;
+    border: 6px solid #ffffff;
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+}
+
+.services-learn-more {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    position: relative;
+    z-index: 2;
 }
 
 .mt-n5 {
@@ -1113,9 +1281,32 @@ footer .btn.rounded-circle:hover {
 .blob-3 {
     width: 350px;
     height: 350px;
-    background: var(--accent-color);
+    background: var(--secondary-color);
     bottom: 10%;
     left: 20%;
+}
+
+[data-bs-theme="dark"] .services-grid-section {
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.48) 0%, rgba(15, 23, 42, 0) 100%);
+}
+
+[data-bs-theme="dark"] .service-card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+[data-bs-theme="dark"] .service-card p,
+[data-bs-theme="dark"] .services-grid-section .text-secondary {
+    color: #cbd5e1 !important;
+}
+
+[data-bs-theme="dark"] .services-programs-title {
+    color: #f8fafc;
+}
+
+[data-bs-theme="dark"] .services-icon {
+    border-color: #1e293b;
+    box-shadow: 0 16px 30px rgba(2, 6, 23, 0.35);
 }
 
 /* --- About Page Specific --- */
@@ -1202,9 +1393,9 @@ footer .btn.rounded-circle:hover {
 
 /* --- Testimonials Section --- */
 .testimonial-card {
-    border: none;
+    border: 1px solid var(--border-color);
     border-radius: 30px;
-    background: white;
+    background: var(--card-bg);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     padding: 2.5rem;
     position: relative;
@@ -1242,7 +1433,38 @@ footer .btn.rounded-circle:hover {
     border-radius: 20px;
     object-fit: cover;
     margin-right: 1rem;
-    border: 3px solid var(--light-soft);
+    border: 3px solid rgba(255, 87, 123, 0.12);
+}
+
+.testimonial-split-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 36px;
+    min-height: 100%;
+    box-shadow: 0 24px 55px rgba(15, 23, 42, 0.14);
+}
+
+.testimonial-split-img img {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.8) 100%);
+}
+
+[data-bs-theme="dark"] .testimonial-card {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 18px 36px rgba(2, 6, 23, 0.3);
+}
+
+[data-bs-theme="dark"] .testimonial-card .text-secondary,
+[data-bs-theme="dark"] .testimonial-card .text-muted,
+[data-bs-theme="dark"] .bg-light-soft .text-secondary {
+    color: #cbd5e1 !important;
 }
 
 .testimonial-carousel .carousel-indicators {
@@ -1262,4 +1484,20 @@ footer .btn.rounded-circle:hover {
     opacity: 1;
     width: 24px;
     border-radius: 10px;
+}
+
+@media (max-width: 991.98px) {
+    .about-hero {
+        padding: 130px 0 90px;
+        background-position: 62% center;
+    }
+
+    .services-hero {
+        padding: 130px 0 90px;
+        background-position: 58% center;
+    }
+
+    .testimonial-split-img img {
+        min-height: 360px;
+    }
 }
