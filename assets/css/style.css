@@ -1984,10 +1984,15 @@ footer .btn.rounded-circle:hover {
     }
 }
 
+@media (max-width: 991.98px) {
+    .feature-card-col {
+        margin-bottom: 110px !important;
+    }
+}
+
 @media (max-width: 1200px) {
     .feature-card {
         padding-bottom: 80px;
-        margin-bottom: 130px !important;
     }
 }
 
