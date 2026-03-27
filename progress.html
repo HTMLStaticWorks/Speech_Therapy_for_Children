@@ -336,31 +336,20 @@
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav gap-3">
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.html">Home 1</a></li>
-                            <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
-                        </ul>
-                    </div>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
                 <li class="nav-item"><a class="nav-link active" href="progress.html">Progress</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html?role=admin">Admin Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html?role=parent">Parent Dashboard</a></li>
                 <hr>
                 <li class="nav-item">
                     <button class="btn btn-outline-primary w-100 mb-3" id="rtlToggleMobile">
                         <i class="bi bi-translate me-2"></i> RTL Mode
                     </button>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-bold" href="dashboard.html?role=admin">Admin Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-bold" href="dashboard.html?role=parent">Parents Dashboard</a>
                 </li>
                 <li class="nav-item d-grid gap-2">
                     <a class="btn btn-outline-primary" href="register.html">Sign Up</a>
@@ -385,20 +374,21 @@
         <div class="container">
             <div class="row g-4 align-items-stretch">
                 <div class="col-lg-5 reveal">
-                    <div class="progress-highlight-card h-100">
-                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-4">
+                    <div class="progress-highlight-card h-100 text-center text-lg-start">
+                        <div
+                            class="d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center align-items-lg-start gap-3 mb-4">
                             <div>
 
                                 <h2 class="fw-bold mb-2">Tracking Every Step Forward</h2>
                                 <p class="mb-0 opacity-75">A simple way for families to monitor communication gains,
                                     session outcomes, and upcoming goals.</p>
                             </div>
-                            <div class="progress-circle" style="--percentage: 75%;" data-label="75%"></div>
+                            <div class="progress-circle mx-auto mx-lg-0" style="--percentage: 75%;" data-label="75%"></div>
                         </div>
                         <div class="progress mb-4" style="height: 12px; background: rgba(255,255,255,0.18);">
                             <div class="progress-bar bg-white" style="width: 75%"></div>
                         </div>
-                        <div class="row g-3">
+                        <div class="row g-3 justify-content-center">
                             <div class="col-sm-4">
                                 <div class="progress-stat-chip">
                                     <div class="small opacity-75">Completed Goals</div>
@@ -423,8 +413,8 @@
                 <div class="col-lg-7">
                     <div class="row g-4">
                         <div class="col-md-6 reveal">
-                            <div class="progress-summary-card">
-                                <div class="progress-summary-media">
+                            <div class="progress-summary-card text-center text-md-start">
+                                <div class="progress-summary-media mx-auto mx-md-0">
                                     <img src="assets/images/hero_1.png" alt="Child communication support session">
                                 </div>
                                 <h5 class="fw-bold">Current Focus</h5>
@@ -433,8 +423,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 reveal" style="transition-delay: 0.1s;">
-                            <div class="progress-summary-card">
-                                <div class="progress-summary-media">
+                            <div class="progress-summary-card text-center text-md-start">
+                                <div class="progress-summary-media mx-auto mx-md-0">
                                     <img src="assets/images/card_parent.png" alt="Parent-guided home practice support">
                                 </div>
                                 <h5 class="fw-bold">Home Practice</h5>
@@ -443,8 +433,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 reveal" style="transition-delay: 0.2s;">
-                            <div class="progress-summary-card">
-                                <div class="progress-summary-media">
+                            <div class="progress-summary-card text-center text-md-start">
+                                <div class="progress-summary-media mx-auto mx-md-0">
                                     <img src="assets/images/hero_2.png" alt="Child celebrating progress in therapy">
                                 </div>
                                 <h5 class="fw-bold">Biggest Win</h5>
@@ -453,8 +443,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 reveal" style="transition-delay: 0.3s;">
-                            <div class="progress-summary-card">
-                                <div class="progress-summary-media">
+                            <div class="progress-summary-card text-center text-md-start">
+                                <div class="progress-summary-media mx-auto mx-md-0">
                                     <img src="assets/images/card_school.png" alt="Structured school readiness planning">
                                 </div>
                                 <h5 class="fw-bold">Next Session Goal</h5>

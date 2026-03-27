@@ -169,31 +169,20 @@
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav gap-3">
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.html">Home 1</a></li>
-                            <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
-                        </ul>
-                    </div>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link active" href="resources.html">Resources</a></li>
                 <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html?role=admin">Admin Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html?role=parent">Parent Dashboard</a></li>
                 <hr>
                 <li class="nav-item">
                     <button class="btn btn-outline-primary w-100 mb-3" id="rtlToggleMobile">
                         <i class="bi bi-translate me-2"></i> RTL Mode
                     </button>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-bold" href="dashboard.html?role=admin">Admin Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-bold" href="dashboard.html?role=parent">Parents Dashboard</a>
                 </li>
                 <li class="nav-item d-grid gap-2">
                     <a class="btn btn-outline-primary" href="register.html">Sign Up</a>
@@ -224,8 +213,8 @@
 
             <div class="row g-4">
                 <!-- Guide 1 -->
-                <div class="col-md-6 col-lg-4 reveal">
-                    <div class="premium-card p-0 overflow-hidden h-100 border-0 shadow-sm border-hover-primary">
+                <div class="col-lg-4 reveal">
+                    <div class="premium-card p-0 overflow-hidden h-100 border-0 shadow-sm border-hover-primary text-center text-lg-start">
                         <div class="position-relative overflow-hidden" style="height: 200px;">
                             <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80&w=600"
                                 class="w-100 h-100 object-fit-cover" alt="Milestones">
@@ -233,61 +222,68 @@
                                 <span class="badge rounded-pill" style="color: var(--primary-color);">New</span>
                             </div>
                         </div>
-                        <div class="p-4">
-                            <div class="d-flex gap-2 mb-2">
+                        <div class="p-4 d-flex flex-column" style="flex: 1;">
+                            <div class="d-flex justify-content-center justify-content-lg-start gap-2 mb-2">
                                 <span class="badge bg-light text-secondary border">PDF Guide</span>
                                 <span class="badge bg-light text-secondary border">2-5 Years</span>
                             </div>
                             <h4 class="fw-bold">Speech Milestones Checklist</h4>
                             <p class="text-secondary small">A comprehensive guide of expected speech sounds and building
                                 blocks for toddlers.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill w-100 mt-2 py-2 fw-bold">
-                                <i class="bi bi-download me-2"></i> Download PDF
-                            </a>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill w-100 py-2 fw-bold">
+                                    <i class="bi bi-download me-2"></i> Download PDF
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Guide 2 -->
-                <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.1s;">
-                    <div class="premium-card p-0 overflow-hidden h-100 border-0 shadow-sm border-hover-secondary">
+                <div class="col-lg-4 reveal" style="transition-delay: 0.1s;">
+                    <div class="premium-card p-0 overflow-hidden h-100 border-0 shadow-sm border-hover-secondary text-center text-lg-start">
                         <div class="position-relative overflow-hidden" style="height: 200px;">
                             <img src="https://images.unsplash.com/photo-1484981138541-3d074aa97716?auto=format&fit=crop&q=80&w=600"
                                 class="w-100 h-100 object-fit-cover" alt="Games">
                         </div>
-                        <div class="p-4">
-                            <div class="d-flex gap-2 mb-2">
+                        <div class="p-4 d-flex flex-column" style="flex: 1;">
+                            <div class="d-flex justify-content-center justify-content-lg-start gap-2 mb-2">
                                 <span class="badge bg-light text-secondary border">Activity Pack</span>
                                 <span class="badge bg-light text-secondary border">Parenting</span>
                             </div>
-                            <h4 class="fw-bold">At-Home Language Games</h4>
-                            <p class="text-secondary small">5 simple and fun games to build vocabulary during dinner or
-                                daily routines.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill w-100 mt-2 py-2 fw-bold">
-                                <i class="bi bi-download me-2"></i> Download Guide
-                            </a>
+                            <h4 class="fw-bold">Home Play Activities</h4>
+                            <p class="text-secondary small">5 simple, daily games you can play with your child to
+                                encourage
+                                natural language use.</p>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill w-100 py-2 fw-bold">
+                                    <i class="bi bi-download me-2"></i> Download PDF
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Guide 3 -->
-                <div class="col-md-6 col-lg-4 reveal" style="transition-delay: 0.2s;">
-                    <div class="premium-card p-0 overflow-hidden h-100 border-0 shadow-sm border-hover-accent">
+                <div class="col-lg-4 reveal" style="transition-delay: 0.2s;">
+                    <div class="premium-card p-0 overflow-hidden h-100 border-0 shadow-sm border-hover-accent text-center text-lg-start">
                         <div class="position-relative overflow-hidden" style="height: 200px;">
                             <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=600"
                                 class="w-100 h-100 object-fit-cover" alt="Journal">
                         </div>
-                        <div class="p-4">
-                            <div class="d-flex gap-2 mb-2">
-                                <span class="badge bg-light text-secondary border">Tracker</span>
+                        <div class="p-4 d-flex flex-column" style="flex: 1;">
+                            <div class="d-flex justify-content-center justify-content-lg-start gap-2 mb-2">
+                                <span class="badge bg-light text-secondary border">Checklist</span>
                                 <span class="badge bg-light text-secondary border">All Ages</span>
                             </div>
-                            <h4 class="fw-bold">Daily Progress Journal</h4>
-                            <p class="text-secondary small">Track small victories and consistency with our easy-to-use
-                                daily progress sheet.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill w-100 mt-2 py-2 fw-bold">
-                                <i class="bi bi-download me-2"></i> Download Journal
-                            </a>
+                            <h4 class="fw-bold">Intake Preparation Form</h4>
+                            <p class="text-secondary small">Prepare for your first session by filling out this helpful
+                                history and goals worksheet.</p>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill w-100 py-2 fw-bold">
+                                    <i class="bi bi-download me-2"></i> Download PDF
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -299,12 +295,12 @@
     <section id="videos">
         <div class="container">
             <div class="row align-items-end mb-5 reveal">
-                <div class="col-md-8">
+                <div class="col-md-8 text-center text-md-start">
                     <span class="badge bg-secondary-soft text-secondary mb-2 px-3 py-2">Visual Learning</span>
                     <h2 class="display-5 fw-bold">Video <span class="text-gradient">Tutorials</span></h2>
                     <p class="text-secondary mb-0">Watch our lead specialists demonstrate effective home techniques.</p>
                 </div>
-                <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                <div class="col-md-4 text-center text-md-end mt-4 mt-md-0">
                     <a href="#" class="btn btn-outline-primary rounded-pill">View Channel <i
                             class="bi bi-youtube ms-2"></i></a>
                 </div>
@@ -321,8 +317,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-4">
-                        <div class="d-flex align-items-center gap-3 mb-3">
+                    <div class="mt-4 text-center text-lg-start">
+                        <div class="d-flex justify-content-center justify-content-lg-start align-items-center gap-3 mb-3">
                             <span class="badge" style="color: var(--primary-color);">Featured</span>
                             <span class="text-secondary small"><i class="bi bi-clock me-1"></i> 12 Mins</span>
                         </div>

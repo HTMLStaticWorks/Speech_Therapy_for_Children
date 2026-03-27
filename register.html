@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Join Kinder Speech Therapy</title>
-    <meta name="description" content="Create your account with Kinderly Speech Therapy. Sign up today to access therapy sessions, track progress, and connect with our expert speech therapists.">
+    <meta name="description"
+        content="Create your account with Kinderly Speech Therapy. Sign up today to access therapy sessions, track progress, and connect with our expert speech therapists.">
     <meta name="keywords" content="register, sign up, therapy account, parent account, join">
     <meta name="author" content="Kinder Speech Therapy">
     <meta property="og:title" content="Join Kinder Speech Therapy">
@@ -34,6 +35,7 @@
             max-width: 500px;
             animation: slideUpReg 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
 
         @keyframes slideUpReg {
             0% {
@@ -79,16 +81,16 @@
         }
 
         body {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             min-height: 100vh;
+            background-color: var(--bg-color);
             padding: 40px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
         }
+
         .theme-toggle-btn {
             background: white !important;
-            border: 1px solid rgba(0,0,0,0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             color: var(--primary-color) !important;
             width: 40px;
             height: 40px;
@@ -100,104 +102,168 @@
 
         [data-bs-theme="dark"] .theme-toggle-btn {
             background: #1e1e1e !important;
-            border-color: rgba(255,255,255,0.1);
+            border-color: rgba(255, 255, 255, 0.1);
             color: #BBBBBB !important;
         }
 
         .theme-toggle-btn:hover {
             transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Signup button hover keep primary pink */
+        .btn-signup-primary:hover {
+            background-color: #e54162 !important;
+            /* Slightly darker pink than primary #FF577B */
+            border-color: #e54162 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 87, 123, 0.3);
+        }
+
+        [data-bs-theme="dark"] .premium-card {
+            background-color: rgba(18, 18, 18, 0.95) !important;
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        }
+
+        /* Dark mode inputs enhancement */
+        [data-bs-theme="dark"] .form-control {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+            color: #ffffff !important;
+        }
+
+        [data-bs-theme="dark"] .form-check-input {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border-color: rgba(255, 255, 255, 0.2) !important;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="register-container px-4">
-        <div class="premium-card p-4 p-md-5 shadow-lg border-0"
-            style="border-radius: 32px; background: rgba(var(--bs-body-bg-rgb), 0.8); backdrop-filter: blur(20px);">
-            <!-- Toggles Above Logo -->
-            <div class="d-flex justify-content-end gap-2 mb-3">
-                <button class="btn btn-sm rounded-circle theme-toggle-btn theme-toggle" id="themeToggle" title="Toggle Theme">
-                    <i class="bi bi-sun d-none-dark"></i>
-                    <i class="bi bi-moon d-inline-dark"></i>
-                </button>
-                <button class="btn btn-sm rounded-circle theme-toggle-btn" id="rtlToggle" title="Toggle RTL">
-                    <i class="bi bi-translate"></i>
-                </button>
-            </div>
-
-            <div class="text-center mb-4">
-                <a href="index.html" class="navbar-brand justify-content-center mb-3">
-                    <img src="assets/images/logo.svg" alt="Kinderly Logo" height="45">
-                </a>
-                <h3 class="fw-bold mb-1">Create <span class="text-gradient">Account</span></h3>
-
-            </div>
-
-            <form>
-                <div class="row g-3">
-                    <div class="col-12 text-start">
-                        <label class="form-label small fw-bold text-dark-emphasis text-start">Full Name</label>
-                        <input type="text" class="form-control py-2 shadow-none bg-light border-0"
-                            placeholder="First Name">
-                    </div>
-                    <div class="col-12 text-start">
-                        <label class="form-label small fw-bold text-dark-emphasis text-start">Child's Name</label>
-                        <input type="text" class="form-control py-2 shadow-none bg-light border-0"
-                            placeholder="Child's Name">
-                    </div>
-                    <div class="col-12">
-                        <label class="form-label small fw-bold text-dark-emphasis">Email Address</label>
-                        <input type="email" class="form-control py-2 shadow-none bg-light border-0"
-                            placeholder="name@email.com">
-                    </div>
-                    <div class="col-12">
-                        <label class="form-label small fw-bold text-dark-emphasis">Password</label>
-                        <input type="password" class="form-control py-2 shadow-none bg-light border-0"
-                            placeholder="••••••••">
-                    </div>
-                </div>
-
-                <div class="mt-4 mb-4">
-                    <div class="form-check small">
-                        <input class="form-check-input" type="checkbox" id="terms" checked>
-                        <label class="form-check-label text-secondary" for="terms">
-                            I agree to the <a href="#" class="text-primary text-decoration-none fw-medium">Terms</a> and
-                            <a href="#" class="text-primary text-decoration-none fw-medium">Privacy</a>.
-                        </label>
-                    </div>
-                </div>
-
-                <a href="dashboard.html" class="btn btn-primary w-100 py-2 fs-6 rounded-3 shadow-sm mb-4">Create
-                    Account</a>
-
-                <div class="position-relative mb-4">
-                    <hr class="text-secondary opacity-25">
-                    <span
-                        class="position-absolute top-50 start-50 translate-middle bg-white px-3 small text-secondary">or
-                        connect with</span>
-                </div>
-
-                <!-- Social Login One Line -->
-                <div class="d-flex gap-2 mb-4">
-                    <button
-                        class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center gap-2 small rounded-3">
-                        <img src="https://www.google.com/favicon.ico" height="16" alt="Google"> Google
-                    </button>
-                    <button
-                        class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center gap-2 small rounded-3">
-                        <i class="bi bi-facebook text-primary"></i> Facebook
-                    </button>
-                </div>
-
-                <p class="text-center small text-secondary mt-4 mb-0">
-                    Already have an account? <a href="login.html"
-                        class="text-primary fw-bold text-decoration-none">Login</a>
-                </p>
-            </form>
-        </div>
+    <!-- Decorative Background Shapes -->
+    <div class="decorative-bg">
+        <svg class="deco-shape float-slow" width="120" height="120" viewBox="0 0 24 24"
+            style="top: 10%; left: -2%; color: var(--primary-color);">
+            <path fill="currentColor"
+                d="M12 1L14.39 8.26H22L15.81 12.75L18.19 20L12 15.5L5.81 20L8.19 12.75L2 8.26H9.61L12 1Z" />
+        </svg>
+        <svg class="deco-shape float-slow-reverse" width="80" height="80" viewBox="0 0 24 24"
+            style="top: 40%; right: -1%; color: var(--secondary-color);">
+            <path fill="currentColor"
+                d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.41 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.59 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z" />
+        </svg>
+        <svg class="deco-shape float-slow" width="150" height="150" viewBox="0 0 24 24"
+            style="bottom: 5%; left: 5%; color: var(--accent-color);">
+            <path fill="currentColor"
+                d="M17.5 19C15.01 19 13 16.99 13 14.5C13 14.36 13.01 14.23 13.03 14.1C12.7 14.04 12.35 14 12 14C9.24 14 7 11.76 7 9C7 6.24 9.24 4 12 4C14.31 4 16.25 5.56 16.8 7.69C17.03 7.62 17.26 7.59 17.5 7.59C19.43 7.59 21 9.16 21 11.09C21 11.85 20.76 12.55 20.35 13.13C20.75 13.75 21 14.47 21 15.25C21 17.32 19.43 19 17.5 19Z" />
+        </svg>
     </div>
+
+    <!-- Floating Decorative Elements -->
+    <div class="floating-element icon-clouds d-none d-lg-block" style="bottom: 20%; left: 10%; width: 100px;">
+        <svg viewBox="0 0 24 24" fill="var(--pastel-blue)" class="w-100">
+            <path
+                d="M17.5,19c-3.037,0-5.5-2.463-5.5-5.5c0-0.038,0.001-0.076,0.002-0.114C11.53,13.197,11.02,13,10.5,13 c-2.485,0-4.5,2.015-4.5,4.5S8.015,22,10.5,22h7c1.933,0,3.5-1.567,3.5-3.5S19.433,15,17.5,15c-0.106,0-0.21,0.007-0.312,0.02 C17.114,15.008,17.058,15,17,15C17,11.686,14.314,9,11,9c-3.134,0-5.697,2.405-5.97,5.474C3.805,14.838,3,16.072,3,17.5 C3,19.433,4.567,21,6.5,21" />
+        </svg>
+    </div>
+
+
+    <section class="py-5 overflow-hidden">
+        <div class="container d-flex justify-content-center px-4">
+            <div class="register-container">
+                <div class="d-flex justify-content-end gap-2 mb-2">
+                    <button class="btn btn-sm rounded-circle theme-toggle-btn theme-toggle" id="themeToggle"
+                        title="Toggle Theme">
+                        <i class="bi bi-sun d-none-dark"></i>
+                        <i class="bi bi-moon d-inline-dark"></i>
+                    </button>
+                    <button class="btn btn-sm rounded-circle theme-toggle-btn" id="rtlToggle" title="Toggle RTL">
+                        <i class="bi bi-translate"></i>
+                    </button>
+                </div>
+                <div class="premium-card p-4 p-md-5 shadow-lg border-0"
+                    style="border-radius: 32px; backdrop-filter: blur(20px);">
+                    <div class="text-center mb-4">
+                        <a href="index.html" class="navbar-brand justify-content-center mb-3">
+                            <img src="assets/images/logo.svg" alt="Kinderly Logo" height="45">
+                        </a>
+                        <h3 class="fw-bold mb-1">Create <span class="text-gradient">Account</span></h3>
+
+                    </div>
+
+                    <form class="needs-validation" novalidate id="registerForm">
+                        <div class="row g-3">
+                            <div class="col-12 text-start">
+                                <label class="form-label small fw-bold text-dark-emphasis text-start">Full Name</label>
+                                <input type="text" class="form-control py-2 shadow-none bg-light border-0"
+                                    placeholder="First Name" required>
+                                <div class="invalid-feedback">Full name is required.</div>
+                            </div>
+                            <div class="col-12 text-start">
+                                <label class="form-label small fw-bold text-dark-emphasis text-start">Child's
+                                    Name</label>
+                                <input type="text" class="form-control py-2 shadow-none bg-light border-0"
+                                    placeholder="Child's Name" required>
+                                <div class="invalid-feedback">Child's name is required.</div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-dark-emphasis">Email Address</label>
+                                <input type="email" class="form-control py-2 shadow-none bg-light border-0"
+                                    placeholder="name@email.com" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-dark-emphasis">Password</label>
+                                <input type="password" class="form-control py-2 shadow-none bg-light border-0"
+                                    placeholder="••••••••" required minlength="6">
+                                <div class="invalid-feedback">Password must be at least 6 characters.</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 mb-4">
+                            <div class="form-check small">
+                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                <label class="form-check-label text-secondary" for="terms">
+                                    I agree to the <a href="#"
+                                        class="text-primary text-decoration-none fw-medium">Terms</a> and
+                                    <a href="#" class="text-primary text-decoration-none fw-medium">Privacy</a>.
+                                </label>
+                                <div class="invalid-feedback">You must agree before submitting.</div>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="btn btn-primary btn-signup-primary w-100 py-2 fs-6 rounded-3 shadow-sm mb-4">Create
+                            Account</button>
+
+                        <div class="position-relative mb-4">
+                            <hr class="text-secondary opacity-25">
+                            <span
+                                class="position-absolute top-50 start-50 translate-middle bg-white px-3 small text-secondary">or
+                                connect with</span>
+                        </div>
+
+                        <!-- Social Login Vertical Stack -->
+                        <div class="d-flex flex-column flex-sm-row gap-2 mb-4">
+                            <button
+                                class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center gap-2 small rounded-3">
+                                <img src="https://www.google.com/favicon.ico" height="16" alt="Google"> Google
+                            </button>
+                            <button
+                                class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center gap-2 small rounded-3">
+                                <i class="bi bi-facebook" style="color: #1877F2 !important;"></i> Facebook
+                            </button>
+                        </div>
+
+                        <p class="text-center small text-secondary mt-4 mb-0">
+                            Already have an account? <a href="login.html"
+                                class="text-primary fw-bold text-decoration-none">Login</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -229,6 +295,22 @@
             isRTL = !isRTL;
             updateRTL(isRTL);
         });
+
+        // Form Validation Logic
+        (function () {
+            'use strict'
+            const form = document.getElementById('registerForm')
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    event.preventDefault()
+                    window.location.href = 'dashboard.html'
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })()
     </script>
 </body>
 

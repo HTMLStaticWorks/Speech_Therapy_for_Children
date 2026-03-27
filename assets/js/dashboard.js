@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const profileImage = document.getElementById('dashboardProfileImage');
     const profileName = document.getElementById('dashboardProfileName');
     const profileRole = document.getElementById('dashboardProfileRole');
+    
+    // Track current role in state
+    let currentRole = 'parent';
+
     const roleProfiles = {
         admin: {
             name: 'Sarah Collins',
@@ -29,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function getCurrentRole() {
-        return activeRoleText?.textContent.includes('Admin') ? 'admin' : 'parent';
+        return currentRole;
     }
 
     function setActivePanel(targetId) {
@@ -47,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function applyRole(role) {
+        currentRole = role;
         const isAdmin = role === 'admin';
         if (parentView) parentView.style.display = isAdmin ? 'none' : 'block';
         if (adminView) adminView.style.display = isAdmin ? 'block' : 'none';

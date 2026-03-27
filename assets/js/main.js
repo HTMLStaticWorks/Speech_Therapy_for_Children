@@ -84,11 +84,9 @@ function initNavbar() {
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.padding = '8px 0';
-            navbar.style.boxShadow = 'var(--shadow-md)';
+            navbar.classList.add('navbar-scrolled');
         } else {
-            navbar.style.padding = '16px 0';
-            navbar.style.boxShadow = 'none';
+            navbar.classList.remove('navbar-scrolled');
         }
     });
 
