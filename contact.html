@@ -40,6 +40,36 @@
         }
     }
     </script>
+    <style>
+        /* Social Icons Section */
+        .social-icon-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 20px;
+            font-size: 1.6rem;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+            background: var(--card-bg, #fff);
+            border: 1.5px solid var(--border-color, #e5e5e5);
+            color: #555;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+        }
+        .social-icon-link:hover {
+            transform: translateY(-6px) scale(1.08);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        .social-icon-link.fb:hover  { background: #1877F2; color: #fff; border-color: #1877F2; box-shadow: 0 12px 30px rgba(24,119,242,0.3); }
+        .social-icon-link.ig:hover  { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: #fff; border-color: #e6683c; box-shadow: 0 12px 30px rgba(220,39,67,0.3); }
+        .social-icon-link.li:hover  { background: #0A66C2; color: #fff; border-color: #0A66C2; box-shadow: 0 12px 30px rgba(10,102,194,0.3); }
+        .social-icon-link.tw:hover  { background: #000; color: #fff; border-color: #000; box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+        .social-icon-link.yt:hover  { background: #FF0000; color: #fff; border-color: #FF0000; box-shadow: 0 12px 30px rgba(255,0,0,0.3); }
+        .social-icon-link span { font-size: 0.65rem; margin-top: 0.2rem; font-weight: 600; }
+        [data-bs-theme="dark"] .social-icon-link { background: #1e1e1e; border-color: #333; color: #ccc; }
+    </style>
 </head>
 
 <body>
@@ -231,6 +261,37 @@
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="py-5 bg-light-soft reveal">
+        <div class="container text-center">
+            <span class="badge bg-secondary-soft text-secondary px-3 py-2 mb-3">Stay Connected</span>
+            <h2 class="display-6 fw-bold mb-2">Connect <span class="text-gradient">With Us</span></h2>
+            <p class="text-secondary mb-5">Follow us on social media for tips, updates, and success stories.</p>
+            <div class="d-flex justify-content-center gap-4 flex-wrap">
+                <a href="#" class="social-icon-link fb" title="Facebook" id="social-facebook">
+                    <i class="bi bi-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-icon-link ig" title="Instagram" id="social-instagram">
+                    <i class="bi bi-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="#" class="social-icon-link li" title="LinkedIn" id="social-linkedin">
+                    <i class="bi bi-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="#" class="social-icon-link tw" title="X / Twitter" id="social-twitter">
+                    <i class="bi bi-twitter-x"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" class="social-icon-link yt" title="YouTube" id="social-youtube">
+                    <i class="bi bi-youtube"></i>
+                    <span>YouTube</span>
+                </a>
             </div>
         </div>
     </section>

@@ -58,6 +58,9 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 20px;
+            z-index: 1050;
         }
 
         .dashboard-content-actions {
@@ -392,6 +395,10 @@
             border-color: rgba(148, 163, 184, 0.2);
         }
 
+        [data-bs-theme="dark"] .text-dark {
+            color: #f1f5f9 !important;
+        }
+
         .dashboard-profile-header {
             display: flex;
             align-items: center;
@@ -708,6 +715,9 @@
 
         <main class="main-content">
             <div class="dashboard-content-bar">
+                <div class="d-none d-sm-flex align-items-center">
+                    <h5 class="mb-0 fw-bold">Welcome to your <span class="text-gradient">Dashboard!</span></h5>
+                </div>
                 <div class="ms-auto d-flex align-items-center gap-3">
                     <div class="dashboard-content-actions">
                         <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
@@ -772,23 +782,25 @@
                             <div class="dashboard-stat-card">
                                 <h5 class="dashboard-section-title"><i class="bi bi-calendar-event"></i> Next Session
                                 </h5>
-                                <div class="d-flex align-items-center gap-4 mt-2">
-                                    <img src="assets/images/team_1.png" alt="Sarah" class="rounded-pill shadow-sm"
-                                        style="width: 80px; height: 80px; object-fit: cover;">
-                                    <div class="flex-grow-1">
-                                        <h5 class="fw-bold mb-1">Articulation Therapy</h5>
-                                        <p class="text-secondary mb-2"><i class="bi bi-clock me-1"></i> Tomorrow, 10:00
-                                            AM — In Clinic</p>
-                                        <div class="d-flex gap-2">
-                                            <span class="milestone-badge-pill bg-primary-soft text-primary">With Sarah
-                                                Collins</span>
-                                            <span
-                                                class="milestone-badge-pill bg-success-soft text-success">Confirmed</span>
+                                <div class="d-flex flex-column flex-md-row align-items-md-center gap-3 gap-md-4 mt-2">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <img src="assets/images/team_1.png" alt="Sarah" class="rounded-pill shadow-sm"
+                                            style="width: 80px; height: 80px; object-fit: cover; flex-shrink: 0;">
+                                        <div class="flex-grow-1" style="min-width: 0;">
+                                            <h5 class="fw-bold mb-1">Articulation Therapy</h5>
+                                            <p class="text-secondary mb-2"><i class="bi bi-clock me-1"></i> Tomorrow, 10:00
+                                                AM — In Clinic</p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="milestone-badge-pill bg-primary-soft text-primary text-nowrap" style="white-space: nowrap;">With Sarah
+                                                    Collins</span>
+                                                <span
+                                                    class="milestone-badge-pill bg-success-soft text-success text-nowrap" style="white-space: nowrap;">Confirmed</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="d-none d-md-block">
+                                    <div class="mt-2 mt-md-0 ms-md-auto w-100" style="max-width: 150px;">
                                         <button
-                                            class="btn btn-outline-primary btn-sm rounded-pill px-3">Reschedule</button>
+                                            class="btn btn-outline-primary btn-sm rounded-pill px-3 w-100 text-nowrap">Reschedule</button>
                                     </div>
                                 </div>
                             </div>
@@ -952,9 +964,9 @@
                                 <p class="text-secondary small mb-4">Access and download your comprehensive assessment
                                     and monthly progress reports.</p>
                                 <div class="d-grid gap-2">
-                                    <a href="progress.html" class="btn btn-primary rounded-pill">Open Progress
+                                    <a href="progress.html" class="btn btn-primary rounded-pill text-wrap" style="line-height:1.2; padding-top:0.75rem; padding-bottom:0.75rem;">Open Progress
                                         Center</a>
-                                    <button class="btn btn-outline-primary rounded-pill">Download Latest PDF</button>
+                                    <button class="btn btn-outline-primary rounded-pill text-wrap" style="line-height:1.2; padding-top:0.75rem; padding-bottom:0.75rem;">Download Latest PDF</button>
                                 </div>
                             </div>
                         </div>
@@ -973,22 +985,25 @@
                     </div>
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <div class="dashboard-stat-card">
+                            <div class="dashboard-stat-card d-flex flex-column">
                                 <h5 class="dashboard-section-title"><i class="bi bi-star"></i> Recommended This Week
                                 </h5>
                                 <p class="text-secondary mb-4">Story retell prompts, articulation practice cards, and
                                     sentence-building games precisely matched to current goals.</p>
-                                <a href="resources.html" class="btn btn-primary rounded-pill px-4">Browse Collection</a>
+                                <div class="mt-auto">
+                                    <a href="resources.html" class="btn btn-primary rounded-pill px-4">Browse Collection</a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="dashboard-stat-card">
+                            <div class="dashboard-stat-card d-flex flex-column">
                                 <h5 class="dashboard-section-title"><i class="bi bi-lightbulb"></i> Therapist Guides
                                 </h5>
                                 <p class="text-secondary mb-4">Effective tips for home practice: model slowly, keep it
                                     playful, and celebrate every attempt.</p>
-                                <a href="resources.html" class="btn btn-outline-primary rounded-pill px-4">View All
-                                    Guides</a>
+                                <div class="mt-auto">
+                                    <a href="resources.html" class="btn btn-outline-primary rounded-pill px-4 text-wrap" style="line-height:1.2; padding-top:0.5rem; padding-bottom:0.5rem;">View All Guides</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1284,18 +1299,18 @@
                     <div class="row g-4">
                         <!-- Clinical Library -->
                         <div class="col-lg-8">
-                            <div class="dashboard-stat-card">
+                            <div class="dashboard-stat-card d-flex flex-column">
                                 <h5 class="dashboard-section-title"><i class="bi bi-folder2-open"></i> Clinical Material
                                     Library</h5>
                                 <div class="row g-3 mt-1">
                                     <div class="col-md-6">
                                         <div
-                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer">
-                                            <div class="bg-primary-soft text-primary rounded-pill d-flex align-items-center justify-content-center"
+                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer h-100">
+                                            <div class="bg-primary-soft text-primary rounded-pill d-flex align-items-center justify-content-center flex-shrink-0"
                                                 style="width: 45px; height: 45px;">
                                                 <i class="bi bi-chat-dots fs-5"></i>
                                             </div>
-                                            <div>
+                                            <div style="min-width: 0; flex: 1;">
                                                 <div class="fw-bold">Articulation Cards</div>
                                                 <small class="text-secondary text-truncate d-block">124 items • PDF,
                                                     PNG</small>
@@ -1304,12 +1319,12 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div
-                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer">
-                                            <div class="bg-secondary-soft text-secondary rounded-pill d-flex align-items-center justify-content-center"
+                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer h-100">
+                                            <div class="bg-secondary-soft text-secondary rounded-pill d-flex align-items-center justify-content-center flex-shrink-0"
                                                 style="width: 45px; height: 45px;">
                                                 <i class="bi bi-book fs-5"></i>
                                             </div>
-                                            <div>
+                                            <div style="min-width: 0; flex: 1;">
                                                 <div class="fw-bold">Story Prompts</div>
                                                 <small class="text-secondary text-truncate d-block">45 items •
                                                     PDF</small>
@@ -1318,12 +1333,12 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div
-                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer">
-                                            <div class="bg-dark-soft text-dark rounded-pill d-flex align-items-center justify-content-center"
+                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer h-100">
+                                            <div class="bg-dark-soft text-dark rounded-pill d-flex align-items-center justify-content-center flex-shrink-0"
                                                 style="width: 45px; height: 45px;">
                                                 <i class="bi bi-ear fs-5"></i>
                                             </div>
-                                            <div>
+                                            <div style="min-width: 0; flex: 1;">
                                                 <div class="fw-bold">Phonology Games</div>
                                                 <small class="text-secondary text-truncate d-block">18 interactive
                                                     modules</small>
@@ -1332,23 +1347,25 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div
-                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer">
-                                            <div class="bg-success-soft text-success rounded-pill d-flex align-items-center justify-content-center"
+                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer h-100">
+                                            <div class="bg-success-soft text-success rounded-pill d-flex align-items-center justify-content-center flex-shrink-0"
                                                 style="width: 45px; height: 45px;">
                                                 <i class="bi bi-people fs-5"></i>
                                             </div>
-                                            <div>
-                                                <div class="fw-bold">Parent Handouts</div>
-                                                <small class="text-secondary text-truncate d-block">32 guides • All
+                                            <div style="min-width: 0; flex: 1;">
+                                                <div class="fw-bold text-truncate w-100">Parent Handouts</div>
+                                                <small class="text-secondary text-truncate d-block w-100">32 guides • All
                                                     languages</small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mt-4 pt-2 border-top">
-                                    <button
-                                        class="btn btn-link text-primary p-0 fw-bold text-decoration-none small">Access
-                                        Archive Library <i class="bi bi-arrow-right"></i></button>
+                                <div class="mt-auto pt-4 pb-1">
+                                    <div class="border-top pt-3">
+                                        <button
+                                            class="btn btn-link text-primary p-0 fw-bold text-decoration-none small">Access
+                                            Archive Library <i class="bi bi-arrow-right"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -119,6 +119,30 @@
             border-color: rgba(255, 255, 255, 0.1) !important;
             color: #ffffff !important;
         }
+
+        /* Eye icon toggle button */
+        .password-toggle {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0 0.75rem;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+        .password-toggle:hover { color: var(--primary-color); }
+        [data-bs-theme="dark"] .password-toggle { color: #aaa; }
+        [data-bs-theme="dark"] .password-toggle:hover { color: var(--primary-color); }
+
+        /* Mobile: stack remember me / forgot password */
+        @media (max-width: 575.98px) {
+            .remember-forgot {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0.5rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -193,7 +217,7 @@
                                     class="bi bi-envelope text-muted"></i></span>
                             <input type="email"
                                 class="form-control border-start-0 py-2 shadow-none rounded-end-3 bg-light"
-                                placeholder="name@email.com" required>
+                                placeholder="Email" required>
                             <div class="invalid-feedback">Please enter a valid email address.</div>
                         </div>
                     </div>
@@ -202,15 +226,18 @@
                         <div class="input-group">
                             <span class="input-group-text bg-light border-end-0 rounded-start-3"><i
                                     class="bi bi-lock text-muted"></i></span>
-                            <input type="password"
-                                class="form-control border-start-0 py-2 shadow-none rounded-end-3 bg-light"
-                                placeholder="••••••••" required minlength="6">
+                            <input type="password" id="loginPassword"
+                                class="form-control border-start-0 border-end-0 py-2 shadow-none bg-light"
+                                placeholder="Password" required minlength="6">
+                            <button type="button" class="password-toggle input-group-text bg-light border-start-0 rounded-end-3" id="toggleLoginPassword" aria-label="Toggle password visibility">
+                                <i class="bi bi-eye" id="toggleLoginIcon"></i>
+                            </button>
                             <div class="invalid-feedback">Password is required (min 6 characters).</div>
                         </div>
                     </div>
 
-                    <!-- Remember & Forgot in One Line -->
-                    <div class="d-flex justify-content-between align-items-center mb-4">
+                    <!-- Remember & Forgot - stacked on mobile, inline on larger screens -->
+                    <div class="d-flex justify-content-between align-items-center mb-4 remember-forgot">
                         <div class="form-check mb-0">
                             <input class="form-check-input" type="checkbox" id="remember">
                             <label class="form-check-label small" for="remember">Remember me</label>
@@ -261,6 +288,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Simple theme apply based on localStorage for 100vh pages -->
     <script>
+        // Password Toggle
+        document.getElementById('toggleLoginPassword').addEventListener('click', function () {
+            const input = document.getElementById('loginPassword');
+            const icon = document.getElementById('toggleLoginIcon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('bi-eye', 'bi-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('bi-eye-slash', 'bi-eye');
+            }
+        });
+
         // Theme Logic
         const themeToggle = document.getElementById('themeToggle');
         const storedTheme = localStorage.getItem('theme') || 'light';

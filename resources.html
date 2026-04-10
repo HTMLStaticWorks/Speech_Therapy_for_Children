@@ -81,6 +81,24 @@
         .video-card:hover .play-btn {
             transform: scale(1.1);
         }
+
+        /* Fix badge text visibility in dark mode */
+        .badge[style*="color: var(--primary-color)"] {
+            background: rgba(255, 87, 123, 0.1);
+            border-radius: 999px;
+            padding: 0.35em 0.75em;
+            font-weight: 700;
+        }
+        [data-bs-theme="dark"] .badge[style*="color: var(--primary-color)"] {
+            background: rgba(255, 87, 123, 0.22);
+            color: #ff8fab !important;
+        }
+        /* Download card badges in dark mode */
+        [data-bs-theme="dark"] .badge.bg-light {
+            background-color: rgba(255,255,255,0.1) !important;
+            color: #cbd5e1 !important;
+            border-color: rgba(255,255,255,0.15) !important;
+        }
     </style>
 </head>
 
