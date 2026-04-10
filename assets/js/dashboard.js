@@ -11,8 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarClose = document.getElementById('dashboardSidebarClose');
     const sidebarLinks = Array.from(document.querySelectorAll('.sidebar-link[data-parent-target]'));
     const profileImage = document.getElementById('dashboardProfileImage');
-    const profileName = document.getElementById('dashboardProfileName');
+    const profileImageMobile = document.getElementById('dashboardProfileImageMobile');
     const profileRole = document.getElementById('dashboardProfileRole');
+    
+    // Mobile Sidebar Profile Elements
+    const sidebarProfileNameMobile = document.getElementById('sidebarProfileNameMobile');
+    const sidebarProfileRoleMobile = document.getElementById('sidebarProfileRoleMobile');
+    const sidebarProfileImageMobile = document.getElementById('sidebarProfileImageMobile');
     
     // Track current role in state
     let currentRole = 'parent';
@@ -61,8 +66,26 @@ document.addEventListener('DOMContentLoaded', () => {
             profileImage.src = profile.image;
             profileImage.alt = profile.alt;
         }
+        if (profileImageMobile) {
+            profileImageMobile.src = profile.image;
+            profileImageMobile.alt = profile.alt;
+        }
         if (profileName) profileName.textContent = profile.name;
         if (profileRole) profileRole.textContent = profile.role;
+
+        // Sync Mobile Sidebar Profile
+        if (sidebarProfileNameMobile) sidebarProfileNameMobile.textContent = profile.name;
+        if (sidebarProfileRoleMobile) sidebarProfileRoleMobile.textContent = profile.role;
+        if (sidebarProfileImageMobile) {
+            sidebarProfileImageMobile.src = profile.image;
+            sidebarProfileImageMobile.alt = profile.alt;
+        }
+
+        // Update welcome banners
+        const welcomeParent = document.getElementById('welcomeParentName');
+        const welcomeAdmin = document.getElementById('welcomeAdminName');
+        if (welcomeParent && role === 'parent') welcomeParent.textContent = profile.name.split(' ')[0];
+        if (welcomeAdmin && role === 'admin') welcomeAdmin.textContent = profile.name.split(' ')[0];
 
         const activeLink = sidebarLinks.find((link) => link.classList.contains('active')) || sidebarLinks[0];
         const target = isAdmin ? activeLink?.dataset.adminTarget : activeLink?.dataset.parentTarget;

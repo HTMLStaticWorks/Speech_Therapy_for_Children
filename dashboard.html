@@ -137,15 +137,171 @@
         .dashboard-mobile-avatar {
             width: 42px;
             height: 42px;
-            border-radius: 50%;
+            border-radius: 12px;
             object-fit: cover;
             border: 2px solid rgba(255, 87, 123, 0.2);
+        }
+
+        .sidebar-profile-section {
+            display: none;
+            padding: 1.5rem;
+            background: rgba(255, 87, 123, 0.05);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 87, 123, 0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar-profile-section {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+
+        .sidebar-profile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .sidebar-profile-info {
+            overflow: hidden;
+        }
+
+        .sidebar-profile-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .sidebar-profile-role {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            display: block;
+        }
+
+        /* --- Redesigned Dashboard Utilities --- */
+        .dashboard-welcome-banner {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 28px;
+            padding: 3rem;
+            color: white;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(255, 87, 123, 0.15);
+        }
+
+        .dashboard-welcome-banner::after {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .dashboard-stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .dashboard-stat-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .practice-checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 8px;
+        }
+
+        .practice-checklist-item:hover {
+            background: rgba(255, 87, 123, 0.04);
+        }
+
+        .practice-checklist-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            border-radius: 8px;
+            accent-color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .milestone-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .schedule-mini-card {
+            background: var(--card-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 1.25rem;
+            border-radius: 0 20px 20px 0;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .schedule-mini-card:hover {
+            background: rgba(255, 87, 123, 0.02);
+            transform: translateX(8px);
+        }
+
+        .dashboard-section-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 1.75rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-primary);
+        }
+
+        .dashboard-section-title i {
+            color: var(--primary-color);
+            background: rgba(255, 87, 123, 0.1);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.2rem;
         }
 
         .main-content {
             flex: 1;
             margin-left: var(--sidebar-width);
-            padding: 40px;
+            padding: 50px 60px;
             background: var(--bg-color);
         }
 
@@ -231,14 +387,39 @@
             color: #dc3545;
         }
 
-        [data-bs-theme="dark"] .dashboard-profile {
+        [data-bs-theme="dark"] .dashboard-profile-header {
             background: rgba(255, 255, 255, 0.04);
             border-color: rgba(148, 163, 184, 0.2);
         }
 
-        [data-bs-theme="dark"] .dashboard-profile-avatar {
-            border-color: #1e293b;
-            box-shadow: 0 10px 20px rgba(2, 6, 23, 0.35);
+        .dashboard-profile-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 16px;
+            background: rgba(255, 87, 123, 0.05);
+            border: 1px solid rgba(255, 87, 123, 0.1);
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .dashboard-profile-header:hover {
+            background: rgba(255, 87, 123, 0.1);
+        }
+
+        .dashboard-profile-header-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .sidebar-logo-container {
+            padding: 0 1rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
         }
 
         @media (max-width: 1199px) {
@@ -247,7 +428,7 @@
             }
 
             .dashboard-content-bar {
-                padding: 0.9rem 1.25rem;
+                padding: 0.75rem 1rem;
                 border-radius: 20px;
             }
 
@@ -459,7 +640,15 @@
             <a class="navbar-brand m-0" href="index.html">
                 <img src="assets/images/logo.svg" alt="Kinderly Logo" class="dashboard-logo" height="36">
             </a>
-            <div class="dashboard-mobile-actions">
+            <div class="ms-auto d-flex align-items-center gap-2">
+                <button
+                    class="btn btn-outline-primary border-0 rounded-circle d-flex align-items-center justify-content-center position-relative"
+                    style="width: 46px; height: 46px;" id="notificationBtnMobile">
+                    <i class="bi bi-bell fs-5"></i>
+                    <span
+                        class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border-0 rounded-circle"
+                        style="margin-top: 10px; margin-left: -10px;"></span>
+                </button>
                 <button
                     class="btn btn-outline-primary rounded-circle d-inline-flex align-items-center justify-content-center"
                     id="dashboardTopbarToggle" style="width: 46px; height: 46px;">
@@ -472,30 +661,34 @@
     <div class="dashboard-sidebar-backdrop" id="dashboardSidebarBackdrop"></div>
 
     <div class="dashboard-wrapper">
-        <!-- Sidebar -->
         <aside class="sidebar" id="dashboardSidebar">
+            <div class="sidebar-logo-container mb-4 pb-2 d-none d-lg-block">
+                <a href="index.html">
+                    <img src="assets/images/logo.svg" alt="Kinderly Logo" height="40">
+                </a>
+            </div>
             <div class="sidebar-header-mobile">
                 <button class="btn btn-light rounded-circle d-inline-flex align-items-center justify-content-center"
                     id="dashboardSidebarClose" style="width: 38px; height: 38px;">
                     <i class="bi bi-x-lg"></i>
                 </button>
             </div>
+
+            <!-- Mobile Profile in Sidebar -->
+            <div class="sidebar-profile-section">
+                <img src="assets/images/team_2.png" alt="Profile" class="sidebar-profile-img"
+                    id="sidebarProfileImageMobile">
+                <div class="sidebar-profile-info">
+                    <div class="sidebar-profile-name" id="sidebarProfileNameMobile">Mark Smith</div>
+                    <small class="sidebar-profile-role" id="sidebarProfileRoleMobile">Parent</small>
+                </div>
+            </div>
             <div class="dashboard-mobile-tools">
                 <button class="theme-toggle" id="themeToggleMobile" title="Toggle Theme">
                     <i class="bi bi-moon-stars"></i>
                 </button>
                 <button class="btn btn-outline-primary dashboard-icon-btn" id="rtlToggleMobile" title="Toggle RTL">
-                    <i class="bi bi-translate"></i>
-                </button>
-            </div>
-            <div class="dashboard-profile">
-                <img src="assets/images/team_1.png" alt="Sarah Collins profile" class="dashboard-profile-avatar"
-                    id="dashboardProfileImage">
-                <div>
-                    <small>Signed in as</small>
-                    <div class="fw-bold" id="dashboardProfileName">Sarah Collins</div>
-                    <div class="small text-secondary" id="dashboardProfileRole">Speech Therapist</div>
-                </div>
+                    <i class="bi bi-arrow-left-right"></i> </button>
             </div>
 
 
@@ -513,80 +706,148 @@
             </nav>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
             <div class="dashboard-content-bar">
-                <a class="navbar-brand m-0" href="index.html">
-                    <img src="assets/images/logo.svg" alt="Kinderly Logo" height="40">
-                </a>
-                <div class="dashboard-content-actions">
-                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
-                        <i class="bi bi-moon-stars"></i>
-                    </button>
-                    <button class="btn btn-outline-primary dashboard-icon-btn" id="rtlToggle" title="Toggle RTL">
-                        <i class="bi bi-translate"></i>
-                    </button>
+                <div class="ms-auto d-flex align-items-center gap-3">
+                    <div class="dashboard-content-actions">
+                        <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                        <button class="btn btn-outline-primary dashboard-icon-btn" id="rtlToggle" title="Toggle RTL">
+                            <i class="bi bi-arrow-left-right"></i>
+                        </button>
+                        <button class="btn btn-outline-primary dashboard-icon-btn border-0 position-relative"
+                            id="notificationBtn">
+                            <i class="bi bi-bell"></i>
+                            <span class="position-absolute translate-middle p-1 bg-danger border-0 rounded-circle"
+                                style="top: 10px; left: 32px;"></span>
+                        </button>
+                    </div>
+                    <a href="#" class="dashboard-profile-header d-none d-lg-flex">
+                        <div class="text-end d-none d-md-block">
+                            <div class="fw-bold small lh-1" id="dashboardProfileName">Sarah Collins</div>
+                            <small class="text-secondary" style="font-size: 0.7rem;"
+                                id="dashboardProfileRole">Therapist</small>
+                        </div>
+                        <img src="assets/images/team_1.png" alt="Profile" class="dashboard-profile-header-avatar"
+                            id="dashboardProfileImage">
+                    </a>
                 </div>
             </div>
             <!-- Parent View -->
             <div id="parentView">
                 <section class="dashboard-panel active" id="parent-overview">
-                    <header class="mb-5">
-                        <h2 class="fw-bold mb-1">Hello, Mark!</h2>
-                        <p class="text-secondary mb-0">Here's Leo's progress overview.</p>
-                    </header>
+                    <!-- Welcome Banner -->
+                    <div class="dashboard-welcome-banner">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="fw-bold mb-2">Welcome back, <span id="welcomeParentName">Mark</span>!</h2>
+                                <p class="mb-0 opacity-90">Leo has completed 3 out of 5 home practice sessions this
+                                    week. You're doing great!</p>
+                            </div>
 
-                    <div class="row g-4 mb-5">
-                        <div class="col-md-4">
-                            <div class="premium-card">
-                                <h5 class="fw-bold">Weekly Goal</h5>
-                                <div class="d-flex align-items-center gap-3 mt-3">
-                                    <div class="fs-2 fw-bold text-primary">75%</div>
-                                    <div class="progress flex-grow-1" style="height: 8px;">
-                                        <div class="progress-bar bg-primary" style="width: 75%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="premium-card">
-                                <h5 class="fw-bold mb-3">Next Session</h5>
-                                <div class="dashboard-stack-item">
-                                    <div>
-                                        <h6 class="mb-1">Articulation Therapy</h6>
-                                        <p class="text-secondary small mb-0">Tomorrow, 10:00 AM with Sarah Collins</p>
-                                    </div>
-                                    <button class="btn btn-outline-primary btn-sm">Reschedule</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
                     <div class="row g-4">
-                        <div class="col-lg-6">
-                            <div class="dashboard-summary-card">
-                                <span class="badge bg-white text-primary mb-3">At Home This Week</span>
-                                <h4 class="fw-bold mb-2">Keep momentum going with short daily practice.</h4>
-                                <p class="text-secondary mb-4">Use the picture naming set, sound sorting game, and story
-                                    prompts shared by your therapist.</p>
-                                <a href="resources.html" class="btn btn-primary rounded-pill">Open Resources</a>
+                        <!-- Weekly Progress Widget -->
+                        <div class="col-lg-4">
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-graph-up"></i> Weekly Goal</h5>
+                                <div class="text-center my-4">
+                                    <div class="display-4 fw-bold text-primary mb-1">75%</div>
+                                    <p class="text-secondary small">Overall Milestone Progress</p>
+                                </div>
+                                <div class="progress" style="height: 12px; border-radius: 10px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 75%"
+                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="small text-secondary mt-3 mb-0 text-center">Next milestone: Fluent /s/ blends
+                                </p>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold mb-3">Recent Updates</h5>
-                                <div class="mb-3">
-                                    <div class="small text-secondary">Therapist Note</div>
-                                    <div class="fw-semibold">Improved /s/ blend accuracy during structured play.</div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="small text-secondary">Session Highlight</div>
-                                    <div class="fw-semibold">Leo used longer phrases independently in storytelling.
+
+                        <!-- Next Session Widget -->
+                        <div class="col-lg-8">
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-calendar-event"></i> Next Session
+                                </h5>
+                                <div class="d-flex align-items-center gap-4 mt-2">
+                                    <img src="assets/images/team_1.png" alt="Sarah" class="rounded-pill shadow-sm"
+                                        style="width: 80px; height: 80px; object-fit: cover;">
+                                    <div class="flex-grow-1">
+                                        <h5 class="fw-bold mb-1">Articulation Therapy</h5>
+                                        <p class="text-secondary mb-2"><i class="bi bi-clock me-1"></i> Tomorrow, 10:00
+                                            AM — In Clinic</p>
+                                        <div class="d-flex gap-2">
+                                            <span class="milestone-badge-pill bg-primary-soft text-primary">With Sarah
+                                                Collins</span>
+                                            <span
+                                                class="milestone-badge-pill bg-success-soft text-success">Confirmed</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-none d-md-block">
+                                        <button
+                                            class="btn btn-outline-primary btn-sm rounded-pill px-3">Reschedule</button>
                                     </div>
                                 </div>
-                                <div>
-                                    <div class="small text-secondary">Next Goal</div>
-                                    <div class="fw-semibold">Carry over target sounds into conversation at home.</div>
+                            </div>
+                        </div>
+
+                        <!-- Daily Practice Checklist -->
+                        <div class="col-lg-6">
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-check2-square"></i> Today's Home
+                                    Practice</h5>
+                                <div class="practice-checklist mt-3">
+                                    <div class="practice-checklist-item">
+                                        <input type="checkbox" checked id="p1">
+                                        <label for="p1" class="mb-0">Picture Naming Set (10 mins)</label>
+                                    </div>
+                                    <div class="practice-checklist-item">
+                                        <input type="checkbox" id="p2">
+                                        <label for="p2" class="mb-0">Sound Sorting Game</label>
+                                    </div>
+                                    <div class="practice-checklist-item">
+                                        <input type="checkbox" id="p3">
+                                        <label for="p3" class="mb-0">Story Prompt: "The Brave Lion"</label>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-top">
+                                    <a href="resources.html"
+                                        class="text-primary fw-bold text-decoration-none small">View all assignments <i
+                                            class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Highlights -->
+                        <div class="col-lg-6">
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-stars"></i> Recent Wins</h5>
+                                <div class="mt-3">
+                                    <div class="mb-4">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <span
+                                                class="milestone-badge-pill bg-secondary-soft text-secondary">Therapist
+                                                Note</span>
+                                            <small class="text-secondary">2 days ago</small>
+                                        </div>
+                                        <p class="fw-semibold mb-1">Improved /s/ blend accuracy during play.</p>
+                                        <p class="small text-secondary mb-0">"Leo showed great persistence today!"</p>
+                                    </div>
+                                    <div class="pt-3 border-top text-center">
+                                        <div class="d-flex justify-content-center gap-4">
+                                            <div class="text-center">
+                                                <div class="fw-bold h4 mb-0 text-primary">12</div>
+                                                <small class="text-secondary">Days Streak</small>
+                                            </div>
+                                            <div class="text-center">
+                                                <div class="fw-bold h4 mb-0 text-secondary">5</div>
+                                                <small class="text-secondary">Badges</small>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -594,44 +855,51 @@
                 </section>
 
                 <section class="dashboard-panel" id="parent-appointments">
-                    <header class="mb-5">
-                        <h2 class="fw-bold mb-1">Appointments</h2>
-                        <p class="text-secondary mb-0">Manage upcoming visits and stay on top of scheduling.</p>
-                    </header>
+                    <div class="dashboard-welcome-banner">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h2 class="fw-bold mb-2">My Appointments</h2>
+                                <p class="mb-0 opacity-90">Manage your upcoming therapy sessions and stay on track with
+                                    Leo's schedule.</p>
+                            </div>
+
+                        </div>
+                    </div>
                     <div class="row g-4">
                         <div class="col-lg-7">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold mb-4">Upcoming Sessions</h5>
-                                <div class="dashboard-stack-item py-3 border-bottom">
-                                    <div>
-                                        <div class="fw-semibold">Articulation Therapy</div>
-                                        <div class="text-secondary small">Tomorrow, 10:00 AM with Sarah Collins</div>
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-calendar-check"></i> Upcoming
+                                    Sessions</h5>
+                                <div class="schedule-mini-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <div class="fw-bold">Articulation Therapy</div>
+                                            <div class="small text-secondary">Tomorrow, 10:00 AM with Sarah Collins
+                                            </div>
+                                        </div>
+                                        <span class="badge bg-primary-soft text-primary">Confirmed</span>
                                     </div>
-                                    <span class="badge bg-primary-soft text-primary">Confirmed</span>
                                 </div>
-                                <div class="dashboard-stack-item py-3 border-bottom">
-                                    <div>
-                                        <div class="fw-semibold">Parent Coaching Check-In</div>
-                                        <div class="text-secondary small">Friday, 4:30 PM online</div>
+                                <div class="schedule-mini-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <div class="fw-bold">Parent Coaching Check-In</div>
+                                            <div class="small text-secondary">Friday, 4:30 PM — Online Session</div>
+                                        </div>
+                                        <span class="badge bg-secondary-soft text-secondary">Scheduled</span>
                                     </div>
-                                    <span class="badge bg-secondary-soft text-secondary">Scheduled</span>
-                                </div>
-                                <div class="dashboard-stack-item py-3">
-                                    <div>
-                                        <div class="fw-semibold">Monthly Review</div>
-                                        <div class="text-secondary small">June 28, 11:00 AM in clinic</div>
-                                    </div>
-                                    <span class="badge bg-primary-soft text-primary">Upcoming</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-5">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold mb-3">Quick Actions</h5>
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-primary rounded-pill">Request Reschedule</button>
-                                    <button class="btn btn-outline-primary rounded-pill">Download Calendar</button>
-                                    <button class="btn btn-outline-primary rounded-pill">Message Clinic</button>
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-lightning-charge"></i> Quick Actions
+                                </h5>
+                                <div class="d-grid gap-3">
+                                    <button class="btn btn-primary rounded-pill py-2">Request Reschedule</button>
+                                    <button class="btn btn-outline-primary rounded-pill py-2">Message Therapist</button>
+                                    <button class="btn btn-outline-secondary rounded-pill py-2">Download
+                                        Calendar</button>
                                 </div>
                             </div>
                         </div>
@@ -639,15 +907,20 @@
                 </section>
 
                 <section class="dashboard-panel" id="parent-progress">
-                    <header class="mb-5">
-                        <h2 class="fw-bold mb-1">Progress Tracker</h2>
-                        <p class="text-secondary mb-0">Review current goals, recent wins, and detailed progress reports.
-                        </p>
-                    </header>
+                    <div class="dashboard-welcome-banner">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h2 class="fw-bold mb-2">Growth Tracker</h2>
+                                <p class="mb-0 opacity-90">Deep dive into clinical reports, milestone achievements, and
+                                    developmental trends.</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row g-4">
                         <div class="col-lg-8">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold mb-4">Current Therapy Goals</h5>
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-bullseye"></i> Current Therapy Goals
+                                </h5>
                                 <div class="mb-4">
                                     <div class="d-flex justify-content-between small mb-2"><span>Speech Sound
                                             Accuracy</span><span>82%</span></div>
@@ -673,12 +946,15 @@
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold mb-3">Reports</h5>
-                                <p class="text-secondary">Download full reports or jump to the visual progress page.</p>
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-file-earmark-pdf"></i> Therapy
+                                    Reports</h5>
+                                <p class="text-secondary small mb-4">Access and download your comprehensive assessment
+                                    and monthly progress reports.</p>
                                 <div class="d-grid gap-2">
-                                    <a href="progress.html" class="btn btn-primary rounded-pill">Open Progress Page</a>
-                                    <button class="btn btn-outline-primary rounded-pill">Download PDF Report</button>
+                                    <a href="progress.html" class="btn btn-primary rounded-pill">Open Progress
+                                        Center</a>
+                                    <button class="btn btn-outline-primary rounded-pill">Download Latest PDF</button>
                                 </div>
                             </div>
                         </div>
@@ -686,26 +962,33 @@
                 </section>
 
                 <section class="dashboard-panel" id="parent-resources">
-                    <header class="mb-5">
-                        <h2 class="fw-bold mb-1">Resources</h2>
-                        <p class="text-secondary mb-0">Helpful activities and guides matched to current therapy goals.
-                        </p>
-                    </header>
+                    <div class="dashboard-welcome-banner">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h2 class="fw-bold mb-2">Learning Resources</h2>
+                                <p class="mb-0 opacity-90">Personalized activities and guides to support Leo's journey
+                                    at home.</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold">Recommended This Week</h5>
-                                <p class="text-secondary">Story retell prompts, articulation practice cards, and
-                                    sentence-building games.</p>
-                                <a href="resources.html" class="btn btn-primary rounded-pill">Browse Resources</a>
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-star"></i> Recommended This Week
+                                </h5>
+                                <p class="text-secondary mb-4">Story retell prompts, articulation practice cards, and
+                                    sentence-building games precisely matched to current goals.</p>
+                                <a href="resources.html" class="btn btn-primary rounded-pill px-4">Browse Collection</a>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold">Parent Tips</h5>
-                                <p class="text-secondary">Keep practice playful, model slowly, and celebrate attempts
-                                    before correcting.</p>
-                                <a href="resources.html" class="btn btn-outline-primary rounded-pill">View Guides</a>
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-lightbulb"></i> Therapist Guides
+                                </h5>
+                                <p class="text-secondary mb-4">Effective tips for home practice: model slowly, keep it
+                                    playful, and celebrate every attempt.</p>
+                                <a href="resources.html" class="btn btn-outline-primary rounded-pill px-4">View All
+                                    Guides</a>
                             </div>
                         </div>
                     </div>
@@ -715,66 +998,174 @@
             <!-- Admin View -->
             <div id="adminView" style="display: none;">
                 <section class="dashboard-panel active" id="admin-overview">
-                    <header class="mb-5">
-                        <h2 class="fw-bold mb-1">Therapist Dashboard</h2>
-                        <p class="text-secondary mb-0">Manage your patients and schedule.</p>
-                    </header>
+                    <div class="dashboard-welcome-banner">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h2 class="fw-bold mb-2">Good morning, <span id="welcomeAdminName">Sarah</span>!</h2>
+                                <p class="mb-0 opacity-90">You have 5 sessions scheduled for today. Your current
+                                    caseload is at 85% capacity.</p>
+                            </div>
+                            <div class="col-md-3 text-md-end mt-3 mt-md-0">
+                                <button class="btn btn-white text-dark rounded-pill fw-bold">Add Patient</button>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="row g-4 mb-5">
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="premium-card text-center">
-                                <h3 class="fw-bold text-primary">12</h3>
-                                <p class="text-secondary small mb-0">Active Patients</p>
+                        <!-- Key Stats -->
+                        <div class="col-md-3">
+                            <div class="dashboard-stat-card text-center">
+                                <div class="text-secondary small mb-1">Active Patients</div>
+                                <div class="display-5 fw-bold text-primary">12</div>
+                                <div class="mt-2 text-success small"><i class="bi bi-arrow-up"></i> 8% this month</div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="premium-card text-center">
-                                <h3 class="fw-bold text-secondary">5</h3>
-                                <p class="text-secondary small mb-0">Today's Sessions</p>
+                        <div class="col-md-3">
+                            <div class="dashboard-stat-card text-center">
+                                <div class="text-secondary small mb-1">Weekly Hours</div>
+                                <div class="display-5 fw-bold text-secondary">32</div>
+                                <div class="mt-2 text-primary small">4 hours remaining</div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="premium-card">
-                                <h5 class="fw-bold mb-3">Quick Actions</h5>
-                                <div class="d-flex gap-2 flex-wrap">
-                                    <button class="btn btn-primary btn-sm">Add Patient</button>
-                                    <button class="btn btn-secondary btn-sm">Write Note</button>
-                                    <button class="btn btn-outline-primary btn-sm">View Schedule</button>
+                        <div class="col-md-3">
+                            <div class="dashboard-stat-card text-center">
+                                <div class="text-secondary small mb-1">Reports Due</div>
+                                <div class="display-5 fw-bold text-danger">4</div>
+                                <div class="mt-2 text-secondary small">Next due: Tomorrow</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="dashboard-stat-card text-center">
+                                <div class="text-secondary small mb-1">Pending Invoices</div>
+                                <div class="display-5 fw-bold text-dark">$850</div>
+                                <div class="mt-2 text-secondary small">Updated 1h ago</div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Schedule -->
+                        <div class="col-lg-7">
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-clock-history"></i> Today's Priority
+                                    Sessions</h5>
+                                <div class="schedule-mini-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <div class="fw-bold">09:00 AM — Emma Wilson</div>
+                                            <div class="small text-secondary">Articulation Review (In-Person)</div>
+                                        </div>
+                                        <span class="badge bg-success-soft text-success">Checked In</span>
+                                    </div>
+                                </div>
+                                <div class="schedule-mini-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <div class="fw-bold">10:30 AM — Leo Smith</div>
+                                            <div class="small text-secondary">Social Communication (Telehealth)</div>
+                                        </div>
+                                        <span class="badge bg-primary-soft text-primary">Upcoming</span>
+                                    </div>
+                                </div>
+                                <div class="schedule-mini-card">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <div class="fw-bold">01:45 PM — Ava Brown</div>
+                                            <div class="small text-secondary">Feeding Therapy (In-Person)</div>
+                                        </div>
+                                        <span class="badge bg-secondary-soft text-secondary">Scheduled</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Task List -->
+                        <div class="col-lg-5">
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-list-task"></i> Action Items</h5>
+                                <div class="practice-checklist">
+                                    <div class="practice-checklist-item">
+                                        <input type="checkbox" id="t1">
+                                        <label for="t1" class="mb-0">Sign Progress Report for Leo Smith</label>
+                                    </div>
+                                    <div class="practice-checklist-item">
+                                        <input type="checkbox" id="t2">
+                                        <label for="t2" class="mb-0">Review intake for new patient (Jacob)</label>
+                                    </div>
+                                    <div class="practice-checklist-item">
+                                        <input type="checkbox" checked id="t3">
+                                        <label for="t3" class="mb-0">Order new sensory play materials</label>
+                                    </div>
+                                    <div class="practice-checklist-item">
+                                        <input type="checkbox" id="t4">
+                                        <label for="t4" class="mb-0">Update Parent Guide (Fluency)</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="premium-card">
-                        <h5 class="fw-bold mb-4">Patient Queue</h5>
+                    <!-- Caseload Detail Table -->
+                    <div class="dashboard-stat-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="fw-bold mb-0">Active Caseload Overview</h5>
+                            <button class="btn btn-light btn-sm rounded-pill px-3">View Full List</button>
+                        </div>
                         <div class="table-responsive">
-                            <table class="table align-middle dashboard-table">
-                                <thead class="text-secondary small">
+                            <table class="table align-middle">
+                                <thead class="text-secondary small uppercase">
                                     <tr>
-                                        <th>Patient Name</th>
-                                        <th>Service</th>
-                                        <th>Last Visit</th>
+                                        <th>Patient</th>
+                                        <th>Primary Focus</th>
+                                        <th>Frequency</th>
+                                        <th>Last Note</th>
                                         <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Leo Smith</td>
-                                        <td>Speech Delay</td>
-                                        <td>2 days ago</td>
-                                        <td><span class="badge bg-primary-soft text-primary">Active</span></td>
-                                        <td><button class="btn btn-light btn-sm"><i class="bi bi-pencil"></i></button>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-primary text-white rounded-pill d-flex align-items-center justify-content-center"
+                                                    style="width: 32px; height: 32px; font-size: 0.8rem;">LS</div>
+                                                <div class="fw-semibold">Leo Smith</div>
+                                            </div>
                                         </td>
+                                        <td>Speech Delay</td>
+                                        <td>2x / Week</td>
+                                        <td>2 days ago</td>
+                                        <td><span class="badge bg-primary-soft text-primary">In Progress</span></td>
+                                        <td><button class="btn btn-light btn-sm rounded-circle"><i
+                                                    class="bi bi-three-dots"></i></button></td>
                                     </tr>
                                     <tr>
-                                        <td>Emma Wilson</td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-secondary text-white rounded-pill d-flex align-items-center justify-content-center"
+                                                    style="width: 32px; height: 32px; font-size: 0.8rem;">EW</div>
+                                                <div class="fw-semibold">Emma Wilson</div>
+                                            </div>
+                                        </td>
                                         <td>Articulation</td>
+                                        <td>1x / Week</td>
                                         <td>5 days ago</td>
-                                        <td><span class="badge bg-secondary-soft text-secondary">Pending Review</span>
+                                        <td><span class="badge bg-secondary-soft text-secondary">Review Due</span></td>
+                                        <td><button class="btn btn-light btn-sm rounded-circle"><i
+                                                    class="bi bi-three-dots"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-dark text-white rounded-pill d-flex align-items-center justify-content-center"
+                                                    style="width: 32px; height: 32px; font-size: 0.8rem;">AB</div>
+                                                <div class="fw-semibold">Ava Brown</div>
+                                            </div>
                                         </td>
-                                        <td><button class="btn btn-light btn-sm"><i class="bi bi-pencil"></i></button>
-                                        </td>
+                                        <td>Pragmatics</td>
+                                        <td>1x / Fortnight</td>
+                                        <td>Today</td>
+                                        <td><span class="badge bg-primary-soft text-primary">In Progress</span></td>
+                                        <td><button class="btn btn-light btn-sm rounded-circle"><i
+                                                    class="bi bi-three-dots"></i></button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -783,14 +1174,23 @@
                 </section>
 
                 <section class="dashboard-panel" id="admin-schedule">
-                    <header class="mb-5">
-                        <h2 class="fw-bold mb-1">Appointments</h2>
-                        <p class="text-secondary mb-0">View and manage today's calendar and upcoming sessions.</p>
-                    </header>
+                    <div class="dashboard-welcome-banner">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h2 class="fw-bold mb-2">Clinic Calendar</h2>
+                                <p class="mb-0 opacity-90">Coordinate your daily sessions, manage patient check-ins, and
+                                    optimize your weekly availability.</p>
+                            </div>
+                            <div class="col-md-3 text-md-end mt-3 mt-md-0">
+                                <button class="btn btn-white text-dark rounded-pill fw-bold">Add Session</button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row g-4">
                         <div class="col-lg-8">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold mb-4">Today's Schedule</h5>
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-calendar-check"></i> Full Daily
+                                    Schedule</h5>
                                 <div class="dashboard-stack-item py-3 border-bottom">
                                     <div>
                                         <div class="fw-semibold">9:00 AM - Emma Wilson</div>
@@ -827,58 +1227,157 @@
                 </section>
 
                 <section class="dashboard-panel" id="admin-progress">
-                    <header class="mb-5">
-                        <h2 class="fw-bold mb-1">Progress Tracker</h2>
-                        <p class="text-secondary mb-0">Review patient outcomes, flags, and therapy trends.</p>
-                    </header>
+                    <div class="dashboard-welcome-banner">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h2 class="fw-bold mb-2">Practice Insights</h2>
+                                <p class="mb-0 opacity-90">Monitor clinical outcomes and track patient milestones across
+                                    your entire caseload.</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row g-4">
                         <div class="col-md-4">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold">Reports Due</h5>
-                                <h3 class="text-primary fw-bold mt-3">4</h3>
-                                <p class="text-secondary mb-0 small">Patient progress reviews due this week.</p>
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-file-earmark-text"></i> Reports
+                                    Pending</h5>
+                                <h3 class="text-primary fw-bold mt-2">4</h3>
+                                <p class="text-secondary mb-0 small">Evaluations and monthly progress reviews due this
+                                    week.</p>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold">Improvement Rate</h5>
-                                <h3 class="text-secondary fw-bold mt-3">81%</h3>
-                                <p class="text-secondary mb-0 small">Average weekly milestone completion across
-                                    caseload.</p>
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-graph-up-arrow"></i> Success Rate
+                                </h5>
+                                <h3 class="text-secondary fw-bold mt-2">81%</h3>
+                                <p class="text-secondary mb-0 small">Average milestone completion rate across all active
+                                    therapeutic plans.</p>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold">Needs Attention</h5>
-                                <h3 class="text-primary fw-bold mt-3">2</h3>
-                                <p class="text-secondary mb-0 small">Patients requiring updated plans or parent
-                                    follow-up.</p>
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-exclamation-triangle"></i> Action
+                                    Required</h5>
+                                <h3 class="text-danger fw-bold mt-2">2</h3>
+                                <p class="text-secondary mb-0 small">Patients showing stagnation in specific phoneme
+                                    production goals.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <section class="dashboard-panel" id="admin-resources">
-                    <header class="mb-5">
-                        <h2 class="fw-bold mb-1">Resources</h2>
-                        <p class="text-secondary mb-0">Manage downloadable guides and assign materials to families.</p>
-                    </header>
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold">Shared Library</h5>
-                                <p class="text-secondary">Update printable activities, therapy handouts, and assigned
-                                    home practice resources.</p>
-                                <button class="btn btn-primary rounded-pill">Manage Library</button>
+                    <div class="dashboard-welcome-banner">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h2 class="fw-bold mb-2">Resource Management</h2>
+                                <p class="mb-0 opacity-90">Manage the clinical material library and patient home
+                                    assignments.</p>
+                            </div>
+                            <div class="col-md-3 text-md-end mt-3 mt-md-0">
+                                <button class="btn btn-white text-dark rounded-pill fw-bold">Upload New</button>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="dashboard-section-card">
-                                <h5 class="fw-bold">Recently Assigned</h5>
-                                <p class="text-secondary">Story Retell Cards, Articulation Bingo, and Parent Coaching
-                                    Notes.</p>
-                                <a href="resources.html" class="btn btn-outline-primary rounded-pill">Open Resources
-                                    Page</a>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Clinical Library -->
+                        <div class="col-lg-8">
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-folder2-open"></i> Clinical Material
+                                    Library</h5>
+                                <div class="row g-3 mt-1">
+                                    <div class="col-md-6">
+                                        <div
+                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer">
+                                            <div class="bg-primary-soft text-primary rounded-pill d-flex align-items-center justify-content-center"
+                                                style="width: 45px; height: 45px;">
+                                                <i class="bi bi-chat-dots fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <div class="fw-bold">Articulation Cards</div>
+                                                <small class="text-secondary text-truncate d-block">124 items • PDF,
+                                                    PNG</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div
+                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer">
+                                            <div class="bg-secondary-soft text-secondary rounded-pill d-flex align-items-center justify-content-center"
+                                                style="width: 45px; height: 45px;">
+                                                <i class="bi bi-book fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <div class="fw-bold">Story Prompts</div>
+                                                <small class="text-secondary text-truncate d-block">45 items •
+                                                    PDF</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div
+                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer">
+                                            <div class="bg-dark-soft text-dark rounded-pill d-flex align-items-center justify-content-center"
+                                                style="width: 45px; height: 45px;">
+                                                <i class="bi bi-ear fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <div class="fw-bold">Phonology Games</div>
+                                                <small class="text-secondary text-truncate d-block">18 interactive
+                                                    modules</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div
+                                            class="p-3 border rounded-4 d-flex align-items-center gap-3 hover-bg-light transition-all cursor-pointer">
+                                            <div class="bg-success-soft text-success rounded-pill d-flex align-items-center justify-content-center"
+                                                style="width: 45px; height: 45px;">
+                                                <i class="bi bi-people fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <div class="fw-bold">Parent Handouts</div>
+                                                <small class="text-secondary text-truncate d-block">32 guides • All
+                                                    languages</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-2 border-top">
+                                    <button
+                                        class="btn btn-link text-primary p-0 fw-bold text-decoration-none small">Access
+                                        Archive Library <i class="bi bi-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Assignment Tracking -->
+                        <div class="col-lg-4">
+                            <div class="dashboard-stat-card">
+                                <h5 class="dashboard-section-title"><i class="bi bi-send-check"></i> Recent Assignments
+                                </h5>
+                                <div class="practice-checklist mt-2">
+                                    <div class="practice-checklist-item border-bottom rounded-0 py-3">
+                                        <div>
+                                            <div class="fw-bold small">Articulation Bingo</div>
+                                            <small class="text-secondary">Sent to Leo Smith • 2h ago</small>
+                                        </div>
+                                    </div>
+                                    <div class="practice-checklist-item border-bottom rounded-0 py-3">
+                                        <div>
+                                            <div class="fw-bold small">Fluency Daily Diary</div>
+                                            <small class="text-secondary">Sent to Emma Wilson • Yesterday</small>
+                                        </div>
+                                    </div>
+                                    <div class="practice-checklist-item rounded-0 py-3">
+                                        <div>
+                                            <div class="fw-bold small">Sentence Mix & Match</div>
+                                            <small class="text-secondary">Sent to Ava Brown • 3 days ago</small>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

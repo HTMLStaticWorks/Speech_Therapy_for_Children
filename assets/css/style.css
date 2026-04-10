@@ -1549,23 +1549,22 @@ footer .btn.rounded-circle:hover {
 
 /* --- Home 2 Unique Layout Styling --- */
 .split-hero {
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
     background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
     position: relative;
-    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    padding: 100px 0; /* Equal top and bottom padding as fallback */
 }
 
 @media (max-width: 991.98px) {
     .split-hero {
-        padding-top: 120px !important;
+        min-height: auto;
+        padding: 140px 0 100px;
     }
 }
 
 .hero-mask-img {
-    mask-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 50 Q10 10 50 10 Q90 10 90 50 Q90 90 50 90 Q10 90 10 50' fill='black'/%3E%3C/svg%3E");
-    mask-size: cover;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 50 Q10 10 50 10 Q90 10 90 50 Q90 90 50 90 Q10 90 10 50' fill='black'/%3E%3C/svg%3E");
-    -webkit-mask-size: cover;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2024,3 +2023,101 @@ footer .btn.rounded-circle:hover {
 .service-card-body p {
     margin-bottom: 1.5rem !important;
 }
+/* --- Redesigned Dashboard Utilities --- */
+.dashboard-welcome-banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 24px;
+    padding: 2.5rem;
+    color: white;
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.dashboard-welcome-banner::after {
+    content: " \;
+ position: absolute;
+ top: -50px;
+ right: -50px;
+ width: 200px;
+ height: 200px;
+ background: rgba(255, 255, 255, 0.1);
+ border-radius: 50%;
+}
+
+.dashboard-stat-card {
+ background: var(--card-bg);
+ border: 1px solid var(--border-color);
+ border-radius: 20px;
+ padding: 1.5rem;
+ transition: all 0.3s ease;
+ height: 100%;
+}
+
+.dashboard-stat-card:hover {
+ transform: translateY(-5px);
+ border-color: var(--primary-color);
+ box-shadow: var(--shadow-md);
+}
+
+.practice-checklist-item {
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ padding: 12px;
+ border-radius: 12px;
+ transition: background 0.3s ease;
+ cursor: pointer;
+}
+
+.practice-checklist-item:hover {
+ background: rgba(255, 87, 123, 0.05);
+}
+
+.practice-checklist-item input[type=\checkbox\] {
+ width: 20px;
+ height: 20px;
+ border-radius: 6px;
+ border: 2px solid var(--primary-color);
+ cursor: pointer;
+}
+
+.milestone-badge-pill {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 6px 16px;
+ border-radius: 100px;
+ font-size: 0.85rem;
+ font-weight: 700;
+ margin-bottom: 8px;
+}
+
+.schedule-mini-card {
+ background: var(--card-bg);
+ border-left: 4px solid var(--primary-color);
+ padding: 1rem;
+ border-radius: 0 16px 16px 0;
+ margin-bottom: 1rem;
+ transition: all 0.3s ease;
+}
+
+.schedule-mini-card:hover {
+ background: var(--border-color);
+ transform: translateX(5px);
+}
+
+.dashboard-section-title {
+ font-size: 1.25rem;
+ font-weight: 800;
+ margin-bottom: 1.5rem;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+}
+
+.dashboard-section-title i {
+ color: var(--primary-color);
+}
+
